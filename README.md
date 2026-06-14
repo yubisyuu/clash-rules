@@ -2,33 +2,23 @@
 
 三套分平台配置文件，覆盖 **Clash Meta / Clash Verge / OpenClash**、**Shadowrocket (iOS)**、**Stash (iOS/macOS/tvOS)**。
 
-## 规则来源
-
-| 来源 | 内容 | 格式 |
-|------|------|------|
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | 国内直连、GFW 黑名单、Apple、中国 IP | TXT 域名/IPCIDR |
-| [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) | 广告、AI、社媒、流媒体、游戏 | YAML Classical |
-| [bgpeer/rules](https://github.com/bgpeer/rules) | 券商（HSBC/IB/Longbridge）、Kraken | YAML Classical |
-
-所有规则集通过 **fastly.jsdelivr.net CDN 镜像**拉取，避免 GitHub 阻断。
-
 ## 洋葱过滤模型
 
 ```
-第 1 层  局域网          → DIRECT
-第 2 层  广告            → REJECT
-第 3 层  券商（bgpeer）  → 香港/美国节点
-第 4 层  加密货币交易所   → 专项组
-第 5 层  券商户内联域     → 香港节点
-第 6 层  AI 服务         → 综合代理组
-第 7 层  泛加密货币       → 综合代理组
-第 8 层  社媒/流媒体     → 专项组
-第 9 层  开发者/游戏     → 专项组
-         Apple          → DIRECT
-         国内域名         → DIRECT
-         GFW/代理列表    → Default
-         中国 IP         → DIRECT
-         MATCH          → Catch-All
+第 1 层  局域网            → DIRECT
+第 2 层  广告              → REJECT
+第 3 层  银行与券商         → 香港/美国节点
+第 4 层  加密货币交易所     → 专项组
+第 5 层  券商内联域         → 香港节点
+第 6 层  AI 服务            → 综合代理组
+第 7 层  泛加密货币         → 综合代理组
+第 8 层  社媒/流媒体        → 专项组
+第 9 层  开发者/游戏        → 专项组
+         Apple             → DIRECT
+         国内域名            → DIRECT
+         GFW/代理列表       → Default
+         中国 IP            → DIRECT
+         MATCH             → Default
 ```
 
 ## 三平台对比
@@ -43,7 +33,7 @@
 | **域名嗅探** | Sniffer 完整配置 | — | — |
 | **YAML 锚点** | 支持 | — | 不支持（已展开） |
 
-## 配置结构
+## 仓库结构
 
 ```
 .
@@ -52,16 +42,59 @@
 │   ├── clash.yaml        # Clash Meta / Verge / OpenClash
 │   ├── shadowrocket.conf # Shadowrocket (iOS)
 │   └── stash.yaml        # Stash (iOS / macOS)
-└── icons/
-    ├── hsbc.png          # HSBC 分组图标
-    └── longbridge.png    # Longbridge 分组图标
+├── rules/                # 自托管规则集（20+ 分类）
+│   ├── HSBC/HSBC.yaml
+│   ├── IBKR/IBKR.yaml
+│   ├── Gemini/Gemini.yaml
+│   ├── OpenAI/OpenAI.yaml
+│   └── ...
+├── icons/                # 分组图标（自托管）
+│   ├── HSBC_HK.png
+│   ├── DeepWep.png
+│   ├── Gemini.png
+│   └── ...
 ```
+
+## 规则策略
+
+所有自托管规则集通过 **jsDelivr CDN** 拉取，搭配 Loyalsoldier 和 blackmatrix7 外部规则源作为基础层。
+
+### 规则命名约定
+
+| 前缀 | 来源 |
+|------|------|
+| `ys_` | 自托管（本仓库 `rules/`） |
+| `ls_` | Loyalsoldier/clash-rules |
+| `bm_` | blackmatrix7/ios_rule_script |
+
+## 策略组
+
+### 入口
+- **Default** — 兜底出口（DIRECT + 全部地理组 + DeepWep）
+
+### AI 服务
+- ChatGPT → Gemini
+
+### 社交媒体与流媒体
+- Instagram → YouTube → Google → X → TikTok → NETFLIX → Telegram
+
+### 银行与券商
+- HSBC Hong Kong → Interactive Brokers → Longbridge → uSmart → Zinvest → Phillip → Zircon
+
+### 加密货币
+- Crypto → Kraken → Coinbase → OSL
+
+### 开发与游戏
+- GitHub → Steam → XBOX → Microsoft
+
+### 地理节点池
+- Hong Kong → Taiwan → Japan → Korea → Singapore → US → DeepWep
 
 ## 快速开始
 
 ### Clash Meta / Verge / OpenClash
 
-1. 复制 `config/clash.yaml` 内容粘贴到配置文件编辑器
+1. 复制 `config/clash.yaml` 内容粘贴到配置编辑器
 2. 将 `YOUR_SUBSCRIPTION_URL` 替换为你的节点订阅链接（`proxy-providers > sushi_cloud > url`）
 3. 重载配置
 
@@ -78,30 +111,6 @@
 2. 替换 `YOUR_SUBSCRIPTION_URL` 为你的订阅链接
 3. 重载配置
 
-## 策略组结构
-
-### 入口与 AI
-- **Default** — 兜底出口（DIRECT + 全部地理组 + All Nodes）
-- **AI** — Gemini / OpenAI 走独立隧道
-
-### 社交媒体与流媒体
-- Instagram → YouTube → Google → Twitter → TikTok → NETFLIX → Telegram
-
-### 银行与券商
-- HSBC Hong Kong → Interactive Brokers → Longbridge → uSmart → Zinvest → Phillip → Zircon
-
-### 加密货币
-- Crypto → Kraken → Coinbase → OSL
-
-### 开发与游戏
-- GitHub → Steam → Xbox → Microsoft
-
-### 地理节点池
-- Hong Kong → Taiwan → Japan → Korea → Singapore → US → All Nodes
-
-### 终局兜底
-- Catch-All（全地区 + DIRECT）
-
 ## 隐私拦截
 
 | 域名 | 处置 | 用途 |
@@ -109,13 +118,11 @@
 | `ut.taobao.com` | REJECT | 阿里 UT 用户行为埋点 SDK |
 | `bugly.qq.com` | REJECT | 腾讯 Bugly 崩溃上报 SDK |
 
-## 图标
+## 图标引用
 
-仓库自带 `icons/` 目录下的分组图标可通过 jsDelivr 引用：
-
-```
-https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@master/icons/hsbc.png
-https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@master/icons/longbridge.png
+```yaml
+图标: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/<Name>.png"
+规则: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/<Name>/<Name>.yaml"
 ```
 
 ---
