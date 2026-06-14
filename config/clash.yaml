@@ -294,6 +294,9 @@ rule-providers:
   # 券商户内联
   bm_usmart:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/usmart/usmart.yaml" }
+
+  bm_zinvest:
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zinvest/zinvest.yaml" }
   bm_ibkr:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ibkr/ibkr.yaml" }
   bm_longbridge:
@@ -390,11 +393,7 @@ rules:
 
   # 第五层：券商（手动内联域）
   - RULE-SET,bm_usmart,uSmart
-  - DOMAIN-SUFFIX,investassistant.com,Zinvest
-  - DOMAIN-SUFFIX,zvstapp.com,Zinvest
-  - DOMAIN-SUFFIX,financialdatamining.com,Zinvest
-  - DOMAIN-SUFFIX,aliyuncs.com,Zinvest
-  - DOMAIN-SUFFIX,tpns.tencent.com,Zinvest
+  - RULE-SET,bm_zinvest,Zinvest
   - DOMAIN-SUFFIX,phillip.com.hk,Phillip
   - DOMAIN-SUFFIX,phillipsec.com.hk,Phillip
   - DOMAIN-SUFFIX,phillip.com.sg,Phillip

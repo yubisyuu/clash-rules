@@ -291,6 +291,13 @@ rule-providers:
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/usmart/usmart.yaml"
 
+  bm_zinvest:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zinvest/zinvest.yaml"
+
   # 加密货币交易所
   bm_kraken:
     type: http
@@ -486,11 +493,7 @@ rules:
 
   # 第五层：券商（手动内联域）
   - RULE-SET,bm_usmart,uSmart
-  - DOMAIN-SUFFIX,investassistant.com,Zinvest
-  - DOMAIN-SUFFIX,zvstapp.com,Zinvest
-  - DOMAIN-SUFFIX,financialdatamining.com,Zinvest
-  - DOMAIN-SUFFIX,aliyuncs.com,Zinvest
-  - DOMAIN-SUFFIX,tpns.tencent.com,Zinvest
+  - RULE-SET,bm_zinvest,Zinvest
   - DOMAIN-SUFFIX,phillip.com.hk,Phillip
   - DOMAIN-SUFFIX,phillipsec.com.hk,Phillip
   - DOMAIN-SUFFIX,phillip.com.sg,Phillip
