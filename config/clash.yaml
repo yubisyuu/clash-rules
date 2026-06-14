@@ -288,73 +288,73 @@ rule-providers:
     { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising.yaml" }
 
   # 券商（bgpeer）
-  bm_hsbc:
+  s_hsbc:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/hsbc/hsbc.yaml" }
 
   # 券商户内联
-  bm_usmart:
+  s_usmart:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/usmart/usmart.yaml" }
 
-  bm_zinvest:
-  bm_phillip:
-  bm_zircon:
+  s_zinvest:
+  s_phillip:
+  s_zircon:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zircon/zircon.yaml" }
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/phillip/phillip.yaml" }
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zinvest/zinvest.yaml" }
-  bm_ibkr:
+  s_ibkr:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ibkr/ibkr.yaml" }
-  bm_longbridge:
+  s_longbridge:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/longbridge/longbridge.yaml" }
 
   # 加密货币交易所
-  bm_coinbase:
-  bm_osl:
+  s_coinbase:
+  s_osl:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/osl/osl.yaml" }
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/coinbase/coinbase.yaml" }
 
-  bm_kraken:
+  s_kraken:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/kraken/kraken.yaml" }
 
   # AI 服务
-  bm_gemini:
+  s_gemini:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Gemini/Gemini.yaml" }
-  bm_openai:
+  s_openai:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OpenAI/OpenAI.yaml" }
 
   # 加密货币综合
-  bm_crypto:
+  s_crypto:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Crypto/Crypto.yaml" }
 
   # 社交媒体与流媒体
-  bm_tiktok:
+  s_tiktok:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/TikTok/TikTok.yaml" }
-  bm_netflix:
+  s_netflix:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Netflix/Netflix.yaml" }
-  bm_telegram:
+  s_telegram:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Telegram/Telegram.yaml" }
-  bm_instagram:
+  s_instagram:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Instagram/Instagram.yaml" }
-  bm_youtube:
+  s_youtube:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/YouTube/YouTube.yaml" }
-  bm_google:
+  s_google:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Google/Google.yaml" }
-  bm_x:
+  s_x:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/X/X.yaml" }
 
   # 开发者平台
-  bm_github:
+  s_github:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/GitHub/GitHub.yaml" }
-  bm_docker:
+  s_docker:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Docker/Docker.yaml" }
 
   # 游戏平台
-  bm_steam:
+  s_steam:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Steam/Steam.yaml" }
-  bm_xbox:
+  s_xbox:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Xbox/Xbox.yaml" }
-  bm_microsoft:
+  s_microsoft:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Microsoft/Microsoft.yaml" }
-  bm_nintendo:
+  s_nintendo:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Nintendo/Nintendo.yaml" }
 
   # Loyalsoldier — 国内直连 / GFW / Apple / 中国 IP
@@ -384,46 +384,46 @@ rules:
   - DOMAIN-SUFFIX,bugly.qq.com,REJECT
 
   # 第三层：银行与券商 — bgpeer RULE-SET + 关键域内联兜底
-  - RULE-SET,bm_hsbc,HSBC Hong Kong
+  - RULE-SET,s_hsbc,HSBC Hong Kong
   - DOMAIN-SUFFIX,hsbcbroker.com,HSBC Hong Kong
   - DOMAIN-SUFFIX,securities.hsbc.com.hk,HSBC Hong Kong
-  - RULE-SET,bm_ibkr,Interactive Brokers
-  - RULE-SET,bm_longbridge,Longbridge
+  - RULE-SET,s_ibkr,Interactive Brokers
+  - RULE-SET,s_longbridge,Longbridge
 
   # 第四层：加密货币交易所（须在泛 Crypto 之前，防止覆盖）
-  - RULE-SET,bm_coinbase,Coinbase
-  - RULE-SET,bm_kraken,Kraken
-  - RULE-SET,bm_osl,OSL
+  - RULE-SET,s_coinbase,Coinbase
+  - RULE-SET,s_kraken,Kraken
+  - RULE-SET,s_osl,OSL
 
   # 第五层：券商（手动内联域）
-  - RULE-SET,bm_usmart,uSmart
-  - RULE-SET,bm_zinvest,Zinvest
-  - RULE-SET,bm_phillip,Phillip
+  - RULE-SET,s_usmart,uSmart
+  - RULE-SET,s_zinvest,Zinvest
+  - RULE-SET,s_phillip,Phillip
 
-  - RULE-SET,bm_zircon,Zircon
+  - RULE-SET,s_zircon,Zircon
   # 第六层：AI 服务
-  - RULE-SET,bm_gemini,AI
-  - RULE-SET,bm_openai,AI
+  - RULE-SET,s_gemini,AI
+  - RULE-SET,s_openai,AI
 
   # 第七层：泛加密货币综合
-  - RULE-SET,bm_crypto,Crypto
+  - RULE-SET,s_crypto,Crypto
 
   # 第八层：社交媒体与流媒体
-  - RULE-SET,bm_tiktok,TikTok
-  - RULE-SET,bm_netflix,NETFLIX
-  - RULE-SET,bm_telegram,Telegram
-  - RULE-SET,bm_instagram,Instagram
-  - RULE-SET,bm_youtube,YouTube
-  - RULE-SET,bm_google,Google
-  - RULE-SET,bm_x,X
+  - RULE-SET,s_tiktok,TikTok
+  - RULE-SET,s_netflix,NETFLIX
+  - RULE-SET,s_telegram,Telegram
+  - RULE-SET,s_instagram,Instagram
+  - RULE-SET,s_youtube,YouTube
+  - RULE-SET,s_google,Google
+  - RULE-SET,s_x,X
 
   # 第九层：开发者工具与游戏平台
-  - RULE-SET,bm_github,GitHub
-  - RULE-SET,bm_docker,Default
-  - RULE-SET,bm_steam,Steam
-  - RULE-SET,bm_xbox,Xbox
-  - RULE-SET,bm_microsoft,Microsoft
-  - RULE-SET,bm_nintendo,DIRECT
+  - RULE-SET,s_github,GitHub
+  - RULE-SET,s_docker,Default
+  - RULE-SET,s_steam,Steam
+  - RULE-SET,s_xbox,Xbox
+  - RULE-SET,s_microsoft,Microsoft
+  - RULE-SET,s_nintendo,DIRECT
 
   # 巴哈姆特（台湾站）
   - DOMAIN-SUFFIX,gamer.com.tw,Taiwan

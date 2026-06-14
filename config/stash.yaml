@@ -246,21 +246,21 @@ rule-providers:
     url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising.yaml"
 
   # 券商（bgpeer）
-  bm_hsbc:
+  ys_hsbc:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/hsbc/hsbc.yaml"
 
-  bm_ibkr:
+  ys_ibkr:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ibkr/ibkr.yaml"
 
-  bm_longbridge:
+  ys_longbridge:
     type: http
     behavior: classical
     format: yaml
@@ -268,7 +268,7 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/longbridge/longbridge.yaml"
 
   # Coinbase
-  bm_coinbase:
+  ys_coinbase:
     type: http
     behavior: classical
     format: yaml
@@ -276,7 +276,7 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/coinbase/coinbase.yaml"
 
   # OSL
-  bm_osl:
+  ys_osl:
     type: http
     behavior: classical
     format: yaml
@@ -284,21 +284,21 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/osl/osl.yaml"
 
   # 券商户内联
-  bm_usmart:
+  ys_usmart:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/usmart/usmart.yaml"
 
-  bm_zinvest:
+  ys_zinvest:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zinvest/zinvest.yaml"
-  bm_phillip:
-  bm_zircon:
+  ys_phillip:
+  ys_zircon:
     type: http
     behavior: classical
     format: yaml
@@ -311,7 +311,7 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/phillip/phillip.yaml"
 
   # 加密货币交易所
-  bm_kraken:
+  ys_kraken:
     type: http
     behavior: classical
     format: yaml
@@ -319,14 +319,14 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/kraken/kraken.yaml"
 
   # AI 服务
-  bm_gemini:
+  ys_gemini:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Gemini/Gemini.yaml"
 
-  bm_openai:
+  ys_openai:
     type: http
     behavior: classical
     format: yaml
@@ -334,7 +334,7 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OpenAI/OpenAI.yaml"
 
   # 加密货币综合
-  bm_crypto:
+  ys_crypto:
     type: http
     behavior: classical
     format: yaml
@@ -342,49 +342,49 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Crypto/Crypto.yaml"
 
   # 社交媒体与流媒体
-  bm_tiktok:
+  ys_tiktok:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/TikTok/TikTok.yaml"
 
-  bm_netflix:
+  ys_netflix:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Netflix/Netflix.yaml"
 
-  bm_telegram:
+  ys_telegram:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Telegram/Telegram.yaml"
 
-  bm_instagram:
+  ys_instagram:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Instagram/Instagram.yaml"
 
-  bm_youtube:
+  ys_youtube:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/YouTube/YouTube.yaml"
 
-  bm_google:
+  ys_google:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Google/Google.yaml"
 
-  bm_x:
+  ys_x:
     type: http
     behavior: classical
     format: yaml
@@ -392,14 +392,14 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/X/X.yaml"
 
   # 开发者平台
-  bm_github:
+  ys_github:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/GitHub/GitHub.yaml"
 
-  bm_docker:
+  ys_docker:
     type: http
     behavior: classical
     format: yaml
@@ -407,28 +407,28 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Docker/Docker.yaml"
 
   # 游戏平台
-  bm_steam:
+  ys_steam:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Steam/Steam.yaml"
 
-  bm_xbox:
+  ys_xbox:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Xbox/Xbox.yaml"
 
-  bm_microsoft:
+  ys_microsoft:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Microsoft/Microsoft.yaml"
 
-  bm_nintendo:
+  ys_nintendo:
     type: http
     behavior: classical
     format: yaml
@@ -492,46 +492,46 @@ rules:
   - DOMAIN-SUFFIX,bugly.qq.com,REJECT
 
   # 第三层：银行与券商 — bgpeer RULE-SET + 关键域内联兜底
-  - RULE-SET,bm_hsbc,HSBC Hong Kong
+  - RULE-SET,ys_hsbc,HSBC Hong Kong
   - DOMAIN-SUFFIX,hsbcbroker.com,HSBC Hong Kong
   - DOMAIN-SUFFIX,securities.hsbc.com.hk,HSBC Hong Kong
-  - RULE-SET,bm_ibkr,Interactive Brokers
-  - RULE-SET,bm_longbridge,Longbridge
+  - RULE-SET,ys_ibkr,Interactive Brokers
+  - RULE-SET,ys_longbridge,Longbridge
 
   # 第四层：加密货币交易所（须在泛 Crypto 之前，防止覆盖）
-  - RULE-SET,bm_coinbase,Coinbase
-  - RULE-SET,bm_kraken,Kraken
-  - RULE-SET,bm_osl,OSL
+  - RULE-SET,ys_coinbase,Coinbase
+  - RULE-SET,ys_kraken,Kraken
+  - RULE-SET,ys_osl,OSL
 
   # 第五层：券商（手动内联域）
-  - RULE-SET,bm_usmart,uSmart
-  - RULE-SET,bm_zinvest,Zinvest
-  - RULE-SET,bm_phillip,Phillip
+  - RULE-SET,ys_usmart,uSmart
+  - RULE-SET,ys_zinvest,Zinvest
+  - RULE-SET,ys_phillip,Phillip
 
-  - RULE-SET,bm_zircon,Zircon
+  - RULE-SET,ys_zircon,Zircon
   # 第六层：AI 服务
-  - RULE-SET,bm_gemini,AI
-  - RULE-SET,bm_openai,AI
+  - RULE-SET,ys_gemini,AI
+  - RULE-SET,ys_openai,AI
 
   # 第七层：泛加密货币综合
-  - RULE-SET,bm_crypto,Crypto
+  - RULE-SET,ys_crypto,Crypto
 
   # 第八层：社交媒体与流媒体
-  - RULE-SET,bm_tiktok,TikTok
-  - RULE-SET,bm_netflix,NETFLIX
-  - RULE-SET,bm_telegram,Telegram
-  - RULE-SET,bm_instagram,Instagram
-  - RULE-SET,bm_youtube,YouTube
-  - RULE-SET,bm_google,Google
-  - RULE-SET,bm_x,X
+  - RULE-SET,ys_tiktok,TikTok
+  - RULE-SET,ys_netflix,NETFLIX
+  - RULE-SET,ys_telegram,Telegram
+  - RULE-SET,ys_instagram,Instagram
+  - RULE-SET,ys_youtube,YouTube
+  - RULE-SET,ys_google,Google
+  - RULE-SET,ys_x,X
 
   # 第九层：开发者工具与游戏平台
-  - RULE-SET,bm_github,GitHub
-  - RULE-SET,bm_docker,Default
-  - RULE-SET,bm_steam,Steam
-  - RULE-SET,bm_xbox,Xbox
-  - RULE-SET,bm_microsoft,Microsoft
-  - RULE-SET,bm_nintendo,DIRECT
+  - RULE-SET,ys_github,GitHub
+  - RULE-SET,ys_docker,Default
+  - RULE-SET,ys_steam,Steam
+  - RULE-SET,ys_xbox,Xbox
+  - RULE-SET,ys_microsoft,Microsoft
+  - RULE-SET,ys_nintendo,DIRECT
 
   # 巴哈姆特（台湾站）
   - DOMAIN-SUFFIX,gamer.com.tw,Taiwan
