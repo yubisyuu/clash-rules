@@ -297,6 +297,12 @@ rule-providers:
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zinvest/zinvest.yaml"
+  bm_phillip:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/phillip/phillip.yaml"
 
   # 加密货币交易所
   bm_kraken:
@@ -494,9 +500,7 @@ rules:
   # 第五层：券商（手动内联域）
   - RULE-SET,bm_usmart,uSmart
   - RULE-SET,bm_zinvest,Zinvest
-  - DOMAIN-SUFFIX,phillip.com.hk,Phillip
-  - DOMAIN-SUFFIX,phillipsec.com.hk,Phillip
-  - DOMAIN-SUFFIX,phillip.com.sg,Phillip
+  - RULE-SET,bm_phillip,Phillip
   - DOMAIN-SUFFIX,zr.hk,Zircon
   - DOMAIN-SUFFIX,zr66.hk,Zircon
   - DOMAIN-SUFFIX,zrsecbk.com,Zircon
