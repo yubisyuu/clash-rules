@@ -297,6 +297,8 @@ rule-providers:
 
   bm_zinvest:
   bm_phillip:
+  bm_zircon:
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zircon/zircon.yaml" }
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/phillip/phillip.yaml" }
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zinvest/zinvest.yaml" }
   bm_ibkr:
@@ -397,10 +399,8 @@ rules:
   - RULE-SET,bm_usmart,uSmart
   - RULE-SET,bm_zinvest,Zinvest
   - RULE-SET,bm_phillip,Phillip
-  - DOMAIN-SUFFIX,zr.hk,Zircon
-  - DOMAIN-SUFFIX,zr66.hk,Zircon
-  - DOMAIN-SUFFIX,zrsecbk.com,Zircon
 
+  - RULE-SET,bm_zircon,Zircon
   # 第六层：AI 服务
   - RULE-SET,bm_gemini,AI
   - RULE-SET,bm_openai,AI

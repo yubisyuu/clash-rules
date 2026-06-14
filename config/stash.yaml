@@ -298,6 +298,12 @@ rule-providers:
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zinvest/zinvest.yaml"
   bm_phillip:
+  bm_zircon:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zircon/zircon.yaml"
     type: http
     behavior: classical
     format: yaml
@@ -501,10 +507,8 @@ rules:
   - RULE-SET,bm_usmart,uSmart
   - RULE-SET,bm_zinvest,Zinvest
   - RULE-SET,bm_phillip,Phillip
-  - DOMAIN-SUFFIX,zr.hk,Zircon
-  - DOMAIN-SUFFIX,zr66.hk,Zircon
-  - DOMAIN-SUFFIX,zrsecbk.com,Zircon
 
+  - RULE-SET,bm_zircon,Zircon
   # 第六层：AI 服务
   - RULE-SET,bm_gemini,AI
   - RULE-SET,bm_openai,AI
