@@ -46,7 +46,7 @@
 │   ├── HSBC/HSBC.yaml
 │   ├── IBKR/IBKR.yaml
 │   ├── Gemini/Gemini.yaml
-│   ├── OpenAI/OpenAI.yaml
+│   ├── ChatGPT/ChatGPT.yaml
 │   └── ...
 ├── icons/                # 分组图标（自托管）
 │   ├── HSBC_HK.png
@@ -54,14 +54,6 @@
 │   ├── Gemini.png
 │   └── ...
 ```
-
-### 规则命名约定
-
-| 前缀 | 来源 |
-|------|------|
-| `ys_` | 自托管（本仓库 `rules/`） |
-| `ls_` | Loyalsoldier/clash-rules |
-| `bm_` | blackmatrix7/ios_rule_script |
 
 ## 策略组
 
