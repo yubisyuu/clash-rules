@@ -332,7 +332,7 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OpenAI/OpenAI.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ChatGPT/ChatGPT.yaml"
 
   # 加密货币综合
   ys_crypto:
