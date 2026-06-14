@@ -297,6 +297,8 @@ rule-providers:
 
   # 加密货币交易所
   bm_coinbase:
+  bm_osl:
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/osl/osl.yaml" }
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/coinbase/coinbase.yaml" }
 
   bm_kraken:
@@ -380,8 +382,7 @@ rules:
   # 第四层：加密货币交易所（须在泛 Crypto 之前，防止覆盖）
   - RULE-SET,bm_coinbase,Coinbase
   - RULE-SET,bm_kraken,Kraken
-  - DOMAIN-SUFFIX,osl.com,OSL
-  - DOMAIN-SUFFIX,oslgroup.com,OSL
+  - RULE-SET,bm_osl,OSL
 
   # 第五层：券商（手动内联域）
   - DOMAIN-SUFFIX,usmart.com,uSmart
