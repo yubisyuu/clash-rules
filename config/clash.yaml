@@ -98,7 +98,7 @@ proxy-groups:
   # --- 默认出口 ---
   - name: Default
     type: select
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/shadowrocket.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Shadowrocket.png"
     proxies: [DIRECT, Hong Kong, Taiwan, Japan, Korea, Singapore, US, All Nodes]
 
   - name: AI
@@ -108,17 +108,17 @@ proxy-groups:
 
   - name: Instagram
     type: select
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/instagram.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Instagram.png"
     proxies: [Japan, Korea, US]
 
   - name: YouTube
     type: select
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/youtube.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/YouTube.png"
     proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore]
 
   - name: Google
     type: select
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/google.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Google.png"
     proxies: [Taiwan, Japan, US]
 
   - name: X
@@ -186,12 +186,12 @@ proxy-groups:
   # --- 开发者与游戏平台 ---
   - name: GitHub
     type: select
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/github.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/GitHub.png"
     proxies: [Hong Kong, Korea, Singapore]
 
   - name: Steam
     type: select
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/steam.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Steam.png"
     proxies: [DIRECT, Default, Hong Kong]
 
   - name: Xbox
@@ -207,17 +207,17 @@ proxy-groups:
   # --- 流媒体 ---
   - name: TikTok
     type: select
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/tiktok.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/TikTok.png"
     proxies: [Japan, Korea]
 
   - name: NETFLIX
     type: select
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/netflix.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Netflix.png"
     proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, US]
 
   - name: Telegram
     type: select
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/telegram.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Telegram.png"
     proxies: [Hong Kong, Korea, Singapore]
 
   # --- 兜底 ---
