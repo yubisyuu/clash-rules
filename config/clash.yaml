@@ -129,12 +129,12 @@ proxy-groups:
   # --- 银行与券商 ---
   - name: HSBC Hong Kong
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/hsbc_hk.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/HSBC_HK.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   - name: Interactive Brokers
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ibkr.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/IBKR.png"
     proxies: [DIRECT, US]
 
   - name: Longbridge
@@ -180,7 +180,7 @@ proxy-groups:
 
   - name: OSL
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/osl.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/OSL.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   # --- 开发者与游戏平台 ---
@@ -290,7 +290,7 @@ rule-providers:
 
   # 券商（bgpeer）
   ys_hsbc:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Hsbc/Hsbc.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/HSBC/HSBC.yaml" }
 
   # 券商户内联
   ys_usmart:
@@ -303,7 +303,7 @@ rule-providers:
   ys_zircon:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Zircon/Zircon.yaml" }
   ys_ibkr:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Ibkr/Ibkr.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/IBKR/IBKR.yaml" }
   ys_longbridge:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Longbridge/Longbridge.yaml" }
 
@@ -311,7 +311,7 @@ rule-providers:
   ys_coinbase:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Coinbase/Coinbase.yaml" }
   ys_osl:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Osl/Osl.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OSL/OSL.yaml" }
 
   ys_kraken:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Kraken/Kraken.yaml" }

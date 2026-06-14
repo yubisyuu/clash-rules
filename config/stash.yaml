@@ -86,12 +86,12 @@ proxy-groups:
   # --- 银行与券商 ---
   - name: HSBC Hong Kong
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/hsbc_hk.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/HSBC_HK.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   - name: Interactive Brokers
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ibkr.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/IBKR.png"
     proxies: [DIRECT, US]
 
   - name: Longbridge
@@ -137,7 +137,7 @@ proxy-groups:
 
   - name: OSL
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/osl.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/OSL.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   # --- 开发者与游戏平台 ---
@@ -251,14 +251,14 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Hsbc/Hsbc.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/HSBC/HSBC.yaml"
 
   ys_ibkr:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Ibkr/Ibkr.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/IBKR/IBKR.yaml"
 
   ys_longbridge:
     type: http
@@ -281,7 +281,7 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Osl/Osl.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OSL/OSL.yaml"
 
   # 券商户内联
   ys_usmart:
