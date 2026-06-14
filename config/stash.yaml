@@ -59,13 +59,14 @@ proxy-groups:
     proxies: [DIRECT, Hong Kong, Taiwan, Japan, Korea, Singapore, US, All Nodes]
 
   - name: ChatGPT
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ChatGPT.png"
+    proxies: [Taiwan, Japan, US]
+
   - name: Gemini
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Gemini.png"
     proxies: [Taiwan, Japan, Korea, Singapore, US]
-    type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ChatGPT.png"
-    proxies: [Taiwan, Japan, US]
 
   - name: Instagram
     type: select
@@ -182,10 +183,6 @@ proxy-groups:
     proxies: [Hong Kong, Korea, Singapore]
 
   # --- 兜底 ---
-  - name: Catch-All
-    type: select
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/final.png"
-    proxies: [DIRECT, Default, Hong Kong, Taiwan, Japan, Korea, Singapore, US]
 
   # --- 地理节点池（依赖 provider filter 正则过滤）---
   - name: Hong Kong
@@ -554,4 +551,4 @@ rules:
   - RULE-SET,ls_cncidr,DIRECT,no-resolve
 
   # 终局
-  - MATCH,Catch-All
+  - MATCH,Default
