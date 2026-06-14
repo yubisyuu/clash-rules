@@ -102,6 +102,10 @@ proxy-groups:
     proxies: [DIRECT, Hong Kong, Taiwan, Japan, Korea, Singapore, US, All Nodes]
 
   - name: ChatGPT
+  - name: Gemini
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Gemini.png"
+    proxies: [Taiwan, Japan, Korea, Singapore, US]
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ChatGPT.png"
     proxies: [Taiwan, Japan, US]
@@ -165,7 +169,7 @@ proxy-groups:
   # --- 加密货币 ---
   - name: Crypto
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons/128/color/btc.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/BTC.png"
     proxies: [Taiwan, Japan, Singapore]
 
   - name: Kraken
@@ -403,8 +407,8 @@ rules:
 
   - RULE-SET,ys_zircon,Zircon
   # 第六层：AI 服务
-  - RULE-SET,ys_gemini,AI
-  - RULE-SET,ys_openai,AI
+  - RULE-SET,ys_gemini,Gemini
+  - RULE-SET,ys_openai,ChatGPT
 
   # 第七层：泛加密货币综合
   - RULE-SET,ys_crypto,Crypto
