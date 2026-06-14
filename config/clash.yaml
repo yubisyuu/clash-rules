@@ -101,9 +101,9 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Shadowrocket.png"
     proxies: [DIRECT, Hong Kong, Taiwan, Japan, Korea, Singapore, US, All Nodes]
 
-  - name: AI
+  - name: ChatGPT
     type: select
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/openai.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ChatGPT.png"
     proxies: [Taiwan, Japan, US]
 
   - name: Instagram
@@ -194,9 +194,9 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Steam.png"
     proxies: [DIRECT, Default, Hong Kong]
 
-  - name: Xbox
+  - name: XBOX
     type: select
-    icon: "https://fastly.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/xbox.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/XBOX.png"
     proxies: [DIRECT, Default, Hong Kong]
 
   - name: Microsoft
@@ -316,7 +316,7 @@ rule-providers:
   ys_kraken:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Kraken/Kraken.yaml" }
 
-  # AI 服务
+  # ChatGPT 服务
   ys_gemini:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Gemini/Gemini.yaml" }
   ys_openai:
@@ -422,7 +422,7 @@ rules:
   - RULE-SET,ys_github,GitHub
   - RULE-SET,ys_docker,Default
   - RULE-SET,ys_steam,Steam
-  - RULE-SET,ys_xbox,Xbox
+  - RULE-SET,ys_xbox,XBOX
   - RULE-SET,ys_microsoft,Microsoft
   - RULE-SET,ys_nintendo,DIRECT
 
