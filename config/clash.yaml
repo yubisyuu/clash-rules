@@ -320,7 +320,7 @@ rule-providers:
   ys_gemini:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Gemini/Gemini.yaml" }
   ys_openai:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OpenAI/OpenAI.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ChatGPT/ChatGPT.yaml" }
 
   # 加密货币综合
   ys_crypto:
