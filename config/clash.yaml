@@ -340,8 +340,6 @@ rule-providers:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Microsoft/Microsoft.yaml" }
   bm_nintendo:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Nintendo/Nintendo.yaml" }
-  bm_game:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Game/Game.yaml" }
 
   # Loyalsoldier — 国内直连 / GFW / Apple / 中国 IP
   ls_lan:
@@ -422,7 +420,6 @@ rules:
   - RULE-SET,bm_xbox,Xbox
   - RULE-SET,bm_microsoft,Microsoft
   - RULE-SET,bm_nintendo,DIRECT
-  - RULE-SET,bm_game,DIRECT
 
   # 巴哈姆特（台湾站）
   - DOMAIN-SUFFIX,gamer.com.tw,Taiwan
