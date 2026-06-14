@@ -56,7 +56,7 @@ proxy-groups:
   - name: Default
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Shadowrocket.png"
-    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Korea, Singapore, US, All Nodes]
+    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Korea, Singapore, US, DeepWep]
 
   - name: ChatGPT
     type: select
@@ -227,10 +227,10 @@ proxy-groups:
     icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/us.png"
     filter: "美|US|States|(?i)America"
 
-  - name: All Nodes
+  - name: DeepWep
     type: url-test
     use: [sushi_cloud]
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/global.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/DeepWep.png"
     exclude-filter: "续费|到期|剩余|官网|提示|通知|公告|网站|地址"
 
 # =====================================================================
