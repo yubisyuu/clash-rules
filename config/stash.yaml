@@ -269,6 +269,12 @@ rule-providers:
 
   # Coinbase
   bm_coinbase:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/coinbase/coinbase.yaml"
+
   # OSL
   bm_osl:
     type: http
@@ -276,11 +282,14 @@ rule-providers:
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/osl/osl.yaml"
+
+  # 券商户内联
+  bm_usmart:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/coinbase/coinbase.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/usmart/usmart.yaml"
 
   # 加密货币交易所
   bm_kraken:
@@ -476,8 +485,7 @@ rules:
   - RULE-SET,bm_osl,OSL
 
   # 第五层：券商（手动内联域）
-  - DOMAIN-SUFFIX,usmart.com,uSmart
-  - DOMAIN-SUFFIX,usmart.hk,uSmart
+  - RULE-SET,bm_usmart,uSmart
   - DOMAIN-SUFFIX,investassistant.com,Zinvest
   - DOMAIN-SUFFIX,zvstapp.com,Zinvest
   - DOMAIN-SUFFIX,financialdatamining.com,Zinvest

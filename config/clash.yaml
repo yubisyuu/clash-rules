@@ -290,6 +290,10 @@ rule-providers:
   # 券商（bgpeer）
   bm_hsbc:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/hsbc/hsbc.yaml" }
+
+  # 券商户内联
+  bm_usmart:
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/usmart/usmart.yaml" }
   bm_ibkr:
     { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ibkr/ibkr.yaml" }
   bm_longbridge:
@@ -385,8 +389,7 @@ rules:
   - RULE-SET,bm_osl,OSL
 
   # 第五层：券商（手动内联域）
-  - DOMAIN-SUFFIX,usmart.com,uSmart
-  - DOMAIN-SUFFIX,usmart.hk,uSmart
+  - RULE-SET,bm_usmart,uSmart
   - DOMAIN-SUFFIX,investassistant.com,Zinvest
   - DOMAIN-SUFFIX,zvstapp.com,Zinvest
   - DOMAIN-SUFFIX,financialdatamining.com,Zinvest
