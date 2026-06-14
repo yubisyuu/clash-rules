@@ -80,43 +80,43 @@ proxy-groups:
 
   - name: Twitter
     type: select
-    icon: "https://x.com/apple-touch-icon.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/x.png"
     proxies: [Taiwan, Japan, US]
 
   # --- 银行与券商 ---
   - name: HSBC Hong Kong
     type: select
-    icon: "https://icons.duckduckgo.com/ip3/hsbc.com.hk.ico"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/hsbc_hk.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   - name: Interactive Brokers
     type: select
-    icon: "https://icons.duckduckgo.com/ip3/ibkr.com.ico"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ibkr.png"
     proxies: [DIRECT, US]
 
   - name: Longbridge
     type: select
-    icon: "https://www.google.com/s2/favicons?domain=longbridge.hk&sz=128"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/longbridge.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   - name: uSmart
     type: select
-    icon: "https://www.google.com/s2/favicons?domain=usmart.hk&sz=128"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/usmart.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   - name: Zinvest
     type: select
-    icon: "https://www.google.com/s2/favicons?domain=investassistant.com&sz=128"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/zinvest.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   - name: Phillip
     type: select
-    icon: "https://play-lh.googleusercontent.com/Xfbig1UtTABBHD62BXAkGxLgmx-Gt5z_ZYXzOiKj9nj9wlGr0oRHmvShM_VX3G022XwVqn8YSquAjaRWAuppyw=w240-h480-rw"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/phillip.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   - name: Zircon
     type: select
-    icon: "https://www.google.com/s2/favicons?domain=zr.hk&sz=128"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/zircon.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   # --- 加密货币 ---
@@ -127,17 +127,17 @@ proxy-groups:
 
   - name: Kraken
     type: select
-    icon: "https://icons.duckduckgo.com/ip3/kraken.com.ico"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/kraken.png"
     proxies: [US]
 
   - name: Coinbase
     type: select
-    icon: "https://icons.duckduckgo.com/ip3/coinbase.com.ico"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/coinbase.png"
     proxies: [US]
 
   - name: OSL
     type: select
-    icon: "https://www.google.com/s2/favicons?domain=osl.com&sz=128"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/osl.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   # --- 开发者与游戏平台 ---
