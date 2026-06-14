@@ -1,0 +1,4 @@
+payload:
+  - DOMAIN-SUFFIX,coinbase.com
+  - DOMAIN-SUFFIX,coinbase-commerce.com
+  - DOMAIN-SUFFIX,cbpayments.com

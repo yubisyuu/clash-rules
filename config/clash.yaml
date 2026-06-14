@@ -289,15 +289,18 @@ rule-providers:
 
   # 券商（bgpeer）
   bm_hsbc:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/hsbc.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/hsbc/hsbc.yaml" }
   bm_ibkr:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ibkr.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ibkr/ibkr.yaml" }
   bm_longbridge:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/longbridge.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/longbridge/longbridge.yaml" }
 
   # 加密货币交易所
+  bm_coinbase:
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/coinbase/coinbase.yaml" }
+
   bm_kraken:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/kraken.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/kraken/kraken.yaml" }
 
   # AI 服务
   bm_gemini:
@@ -375,10 +378,8 @@ rules:
   - RULE-SET,bm_longbridge,Longbridge
 
   # 第四层：加密货币交易所（须在泛 Crypto 之前，防止覆盖）
+  - RULE-SET,bm_coinbase,Coinbase
   - RULE-SET,bm_kraken,Kraken
-  - DOMAIN-SUFFIX,coinbase.com,Coinbase
-  - DOMAIN-SUFFIX,coinbase-commerce.com,Coinbase
-  - DOMAIN-SUFFIX,cbpayments.com,Coinbase
   - DOMAIN-SUFFIX,osl.com,OSL
   - DOMAIN-SUFFIX,oslgroup.com,OSL
 

@@ -251,21 +251,29 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/hsbc.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/hsbc/hsbc.yaml"
 
   bm_ibkr:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ibkr.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ibkr/ibkr.yaml"
 
   bm_longbridge:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/longbridge.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/longbridge/longbridge.yaml"
+
+  # Coinbase
+  bm_coinbase:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/coinbase/coinbase.yaml"
 
   # 加密货币交易所
   bm_kraken:
@@ -273,7 +281,7 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/kraken.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/kraken/kraken.yaml"
 
   # AI 服务
   bm_gemini:
@@ -456,10 +464,8 @@ rules:
   - RULE-SET,bm_longbridge,Longbridge
 
   # 第四层：加密货币交易所（须在泛 Crypto 之前，防止覆盖）
+  - RULE-SET,bm_coinbase,Coinbase
   - RULE-SET,bm_kraken,Kraken
-  - DOMAIN-SUFFIX,coinbase.com,Coinbase
-  - DOMAIN-SUFFIX,coinbase-commerce.com,Coinbase
-  - DOMAIN-SUFFIX,cbpayments.com,Coinbase
   - DOMAIN-SUFFIX,osl.com,OSL
   - DOMAIN-SUFFIX,oslgroup.com,OSL
 
