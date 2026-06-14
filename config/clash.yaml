@@ -121,7 +121,7 @@ proxy-groups:
     icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/google.png"
     proxies: [Taiwan, Japan, US]
 
-  - name: Twitter
+  - name: X
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/x.png"
     proxies: [Taiwan, Japan, US]
@@ -289,57 +289,57 @@ rule-providers:
 
   # 券商（bgpeer）
   bm_hsbc:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/hsbc.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/hsbc.yaml" }
   bm_ibkr:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/ibkr.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ibkr.yaml" }
   bm_longbridge:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/longbridge.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/longbridge.yaml" }
 
   # 加密货币交易所
   bm_kraken:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/kraken.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/kraken.yaml" }
 
   # AI 服务
   bm_gemini:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Gemini/Gemini.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Gemini/Gemini.yaml" }
   bm_openai:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OpenAI/OpenAI.yaml" }
 
   # 加密货币综合
   bm_crypto:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Crypto/Crypto.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Crypto/Crypto.yaml" }
 
   # 社交媒体与流媒体
   bm_tiktok:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/TikTok/TikTok.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/TikTok/TikTok.yaml" }
   bm_netflix:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Netflix/Netflix.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Netflix/Netflix.yaml" }
   bm_telegram:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Telegram/Telegram.yaml" }
   bm_instagram:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Instagram/Instagram.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Instagram/Instagram.yaml" }
   bm_youtube:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/YouTube/YouTube.yaml" }
   bm_google:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml" }
-  bm_twitter:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Twitter/Twitter.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Google/Google.yaml" }
+  bm_x:
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/X/X.yaml" }
 
   # 开发者平台
   bm_github:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/GitHub/GitHub.yaml" }
   bm_docker:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Docker/Docker.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Docker/Docker.yaml" }
 
   # 游戏平台
   bm_steam:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Steam/Steam.yaml" }
   bm_xbox:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Xbox/Xbox.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Xbox/Xbox.yaml" }
   bm_microsoft:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Microsoft/Microsoft.yaml" }
   bm_nintendo:
-    { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Nintendo/Nintendo.yaml" }
+    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Nintendo/Nintendo.yaml" }
   bm_game:
     { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Game/Game.yaml" }
 
@@ -413,7 +413,7 @@ rules:
   - RULE-SET,bm_instagram,Instagram
   - RULE-SET,bm_youtube,YouTube
   - RULE-SET,bm_google,Google
-  - RULE-SET,bm_twitter,Twitter
+  - RULE-SET,bm_x,X
 
   # 第九层：开发者工具与游戏平台
   - RULE-SET,bm_github,GitHub

@@ -78,7 +78,7 @@ proxy-groups:
     icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/google.png"
     proxies: [Taiwan, Japan, US]
 
-  - name: Twitter
+  - name: X
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/x.png"
     proxies: [Taiwan, Japan, US]
@@ -251,21 +251,21 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/hsbc.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/hsbc.yaml"
 
   bm_ibkr:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/ibkr.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ibkr.yaml"
 
   bm_longbridge:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/longbridge.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/longbridge.yaml"
 
   # 加密货币交易所
   bm_kraken:
@@ -273,7 +273,7 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/kraken.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/kraken.yaml"
 
   # AI 服务
   bm_gemini:
@@ -281,14 +281,14 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Gemini/Gemini.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Gemini/Gemini.yaml"
 
   bm_openai:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OpenAI/OpenAI.yaml"
 
   # 加密货币综合
   bm_crypto:
@@ -296,7 +296,7 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Crypto/Crypto.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Crypto/Crypto.yaml"
 
   # 社交媒体与流媒体
   bm_tiktok:
@@ -304,49 +304,49 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/TikTok/TikTok.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/TikTok/TikTok.yaml"
 
   bm_netflix:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Netflix/Netflix.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Netflix/Netflix.yaml"
 
   bm_telegram:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Telegram/Telegram.yaml"
 
   bm_instagram:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Instagram/Instagram.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Instagram/Instagram.yaml"
 
   bm_youtube:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/YouTube/YouTube.yaml"
 
   bm_google:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Google/Google.yaml"
 
-  bm_twitter:
+  bm_x:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Twitter/Twitter.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/X/X.yaml"
 
   # 开发者平台
   bm_github:
@@ -354,14 +354,14 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/GitHub/GitHub.yaml"
 
   bm_docker:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Docker/Docker.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Docker/Docker.yaml"
 
   # 游戏平台
   bm_steam:
@@ -369,28 +369,28 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Steam/Steam.yaml"
 
   bm_xbox:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Xbox/Xbox.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Xbox/Xbox.yaml"
 
   bm_microsoft:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Microsoft/Microsoft.yaml"
 
   bm_nintendo:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Nintendo/Nintendo.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Nintendo/Nintendo.yaml"
 
   bm_game:
     type: http
@@ -498,7 +498,7 @@ rules:
   - RULE-SET,bm_instagram,Instagram
   - RULE-SET,bm_youtube,YouTube
   - RULE-SET,bm_google,Google
-  - RULE-SET,bm_twitter,Twitter
+  - RULE-SET,bm_x,X
 
   # 第九层：开发者工具与游戏平台
   - RULE-SET,bm_github,GitHub
