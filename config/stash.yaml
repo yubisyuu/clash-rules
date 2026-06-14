@@ -80,7 +80,7 @@ proxy-groups:
 
   - name: X
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/x.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/X.png"
     proxies: [Taiwan, Japan, US]
 
   # --- 银行与券商 ---
@@ -96,27 +96,27 @@ proxy-groups:
 
   - name: Longbridge
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/longbridge.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Longbridge.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   - name: uSmart
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/usmart.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/uSmart.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   - name: Zinvest
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/zinvest.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Zinvest.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   - name: Phillip
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/phillip.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Phillip.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   - name: Zircon
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/zircon.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Zircon.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
   # --- 加密货币 ---
@@ -127,12 +127,12 @@ proxy-groups:
 
   - name: Kraken
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/kraken.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Kraken.png"
     proxies: [US]
 
   - name: Coinbase
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/coinbase.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Coinbase.png"
     proxies: [US]
 
   - name: OSL
