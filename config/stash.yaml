@@ -251,21 +251,21 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/hsbc/hsbc.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Hsbc/Hsbc.yaml"
 
   ys_ibkr:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ibkr/ibkr.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Ibkr/Ibkr.yaml"
 
   ys_longbridge:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/longbridge/longbridge.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Longbridge/Longbridge.yaml"
 
   # Coinbase
   ys_coinbase:
@@ -273,7 +273,7 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/coinbase/coinbase.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Coinbase/Coinbase.yaml"
 
   # OSL
   ys_osl:
@@ -281,7 +281,7 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/osl/osl.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Osl/Osl.yaml"
 
   # 券商户内联
   ys_usmart:
@@ -289,26 +289,26 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/usmart/usmart.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/uSmart/uSmart.yaml"
 
   ys_zinvest:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zinvest/zinvest.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Zinvest/Zinvest.yaml"
   ys_phillip:
   ys_zircon:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zircon/zircon.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Zircon/Zircon.yaml"
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/phillip/phillip.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Phillip/Phillip.yaml"
 
   # 加密货币交易所
   ys_kraken:
@@ -316,7 +316,7 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/kraken/kraken.yaml"
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Kraken/Kraken.yaml"
 
   # AI 服务
   ys_gemini:
