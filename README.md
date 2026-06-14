@@ -46,7 +46,7 @@
 │   ├── HSBC/HSBC.yaml
 │   ├── IBKR/IBKR.yaml
 │   ├── Gemini/Gemini.yaml
-│   ├── ChatGPT/ChatGPT.yaml
+│   ├── OpenAI/OpenAI.yaml
 │   └── ...
 ├── icons/                # 分组图标（自托管）
 │   ├── HSBC_HK.png
