@@ -282,6 +282,7 @@ rule-providers:
   ls_dom: &ls_dom { type: http, behavior: domain, format: text, interval: 86400 }
   ls_ip: &ls_ip { type: http, behavior: ipcidr, format: text, interval: 86400 }
   bm_cls: &bm_cls { type: http, behavior: classical, format: yaml, interval: 86400 }
+  ys_cls: &ys_cls { type: http, behavior: classical, format: yaml, interval: 86400 }
 
   # 广告
   bm_ad:
@@ -289,73 +290,73 @@ rule-providers:
 
   # 券商（bgpeer）
   ys_hsbc:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/hsbc/hsbc.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/hsbc/hsbc.yaml" }
 
   # 券商户内联
   ys_usmart:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/usmart/usmart.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/usmart/usmart.yaml" }
 
   ys_zinvest:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zinvest/zinvest.yaml" }
   ys_phillip:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/phillip/phillip.yaml" }
   ys_zircon:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zircon/zircon.yaml" }
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/phillip/phillip.yaml" }
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zinvest/zinvest.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/zircon/zircon.yaml" }
   ys_ibkr:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ibkr/ibkr.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ibkr/ibkr.yaml" }
   ys_longbridge:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/longbridge/longbridge.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/longbridge/longbridge.yaml" }
 
   # 加密货币交易所
   ys_coinbase:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/coinbase/coinbase.yaml" }
   ys_osl:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/osl/osl.yaml" }
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/coinbase/coinbase.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/osl/osl.yaml" }
 
   ys_kraken:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/kraken/kraken.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/kraken/kraken.yaml" }
 
   # AI 服务
   ys_gemini:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Gemini/Gemini.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Gemini/Gemini.yaml" }
   ys_openai:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OpenAI/OpenAI.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OpenAI/OpenAI.yaml" }
 
   # 加密货币综合
   ys_crypto:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Crypto/Crypto.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Crypto/Crypto.yaml" }
 
   # 社交媒体与流媒体
   ys_tiktok:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/TikTok/TikTok.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/TikTok/TikTok.yaml" }
   ys_netflix:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Netflix/Netflix.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Netflix/Netflix.yaml" }
   ys_telegram:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Telegram/Telegram.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Telegram/Telegram.yaml" }
   ys_instagram:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Instagram/Instagram.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Instagram/Instagram.yaml" }
   ys_youtube:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/YouTube/YouTube.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/YouTube/YouTube.yaml" }
   ys_google:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Google/Google.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Google/Google.yaml" }
   ys_x:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/X/X.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/X/X.yaml" }
 
   # 开发者平台
   ys_github:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/GitHub/GitHub.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/GitHub/GitHub.yaml" }
   ys_docker:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Docker/Docker.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Docker/Docker.yaml" }
 
   # 游戏平台
   ys_steam:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Steam/Steam.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Steam/Steam.yaml" }
   ys_xbox:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Xbox/Xbox.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Xbox/Xbox.yaml" }
   ys_microsoft:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Microsoft/Microsoft.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Microsoft/Microsoft.yaml" }
   ys_nintendo:
-    { <<: *bm_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Nintendo/Nintendo.yaml" }
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Nintendo/Nintendo.yaml" }
 
   # Loyalsoldier — 国内直连 / GFW / Apple / 中国 IP
   ls_lan:
