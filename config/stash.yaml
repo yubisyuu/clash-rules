@@ -61,12 +61,17 @@ proxy-groups:
   - name: ChatGPT
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ChatGPT.png"
-    proxies: [Taiwan, Japan, US]
+    proxies: [US]
+
+  - name: Claude
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ChatGPT.png"
+    proxies: [US]
 
   - name: Gemini
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Gemini.png"
-    proxies: [Taiwan, Japan, Korea, Singapore, US]
+    proxies: [US]
 
   - name: Instagram
     type: select
@@ -319,7 +324,14 @@ rule-providers:
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Kraken/Kraken.yaml"
 
-  # ChatGPT 服务
+  # AI 服务（ChatGPT → Claude → Gemini）
+  ys_claude:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Claude/Claude.yaml"
+
   ys_gemini:
     type: http
     behavior: classical
@@ -327,7 +339,7 @@ rule-providers:
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Gemini/Gemini.yaml"
 
-  ys_openai:
+  ys_chatgpt:
     type: http
     behavior: classical
     format: yaml
@@ -510,9 +522,10 @@ rules:
   - RULE-SET,ys_phillip,Phillip
 
   - RULE-SET,ys_zircon,Zircon
-  # 第六层：AI 服务
+  # 第六层：AI 服务（ChatGPT → Claude → Gemini）
+  - RULE-SET,ys_chatgpt,ChatGPT
+  - RULE-SET,ys_claude,Claude
   - RULE-SET,ys_gemini,Gemini
-  - RULE-SET,ys_openai,ChatGPT
 
   # 第七层：泛加密货币综合
   - RULE-SET,ys_crypto,Crypto
