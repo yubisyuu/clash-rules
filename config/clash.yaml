@@ -101,6 +101,7 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Shadowrocket.png"
     proxies: [DIRECT, Hong Kong, Taiwan, Japan, Korea, Singapore, US, DeepWep]
 
+  # --- AI 服务（ChatGPT → Claude → Gemini） ---
   - name: ChatGPT
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ChatGPT.png"
@@ -108,13 +109,29 @@ proxy-groups:
 
   - name: Claude
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ChatGPT.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Claude.png"
     proxies: [US]
 
   - name: Gemini
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Gemini.png"
     proxies: [US]
+
+  # --- 社交媒体（Telegram → X → TikTok → Instagram → YouTube → Google） ---
+  - name: Telegram
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Telegram.png"
+    proxies: [Hong Kong, Korea, Singapore]
+
+  - name: X
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/X.png"
+    proxies: [Taiwan, Japan, US]
+
+  - name: TikTok
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/TikTok.png"
+    proxies: [Japan, Korea]
 
   - name: Instagram
     type: select
@@ -131,12 +148,7 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Google.png"
     proxies: [Taiwan, Japan, US]
 
-  - name: X
-    type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/X.png"
-    proxies: [Taiwan, Japan, US]
-
-  # --- 银行与券商 ---
+  # --- 银行与券商（HSBC Hong Kong → Interactive Brokers → Futu → Longbridge → uSmart → Zinvest → Phillip → Zircon） ---
   - name: HSBC Hong Kong
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/HSBC_HK.png"
@@ -177,7 +189,7 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Zircon.png"
     proxies: [DIRECT, Hong Kong, Taiwan, Japan, Singapore]
 
-  # --- 加密货币 ---
+  # --- 加密货币（Crypto → Kraken → Coinbase → OSL） ---
   - name: Crypto
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/BTC.png"
@@ -198,7 +210,7 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/OSL.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
-  # --- 开发者与游戏平台 ---
+  # --- 开发者与游戏平台（GitHub → Steam → XBOX → Microsoft） ---
   - name: GitHub
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/GitHub.png"
@@ -219,23 +231,13 @@ proxy-groups:
     icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/microsoft.png"
     proxies: [DIRECT, Default]
 
-  # --- 流媒体 ---
-  - name: TikTok
-    type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/TikTok.png"
-    proxies: [Japan, Korea]
-
+  # --- 流媒体（NETFLIX） ---
   - name: NETFLIX
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Netflix.png"
     proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, US]
 
-  - name: Telegram
-    type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Telegram.png"
-    proxies: [Hong Kong, Korea, Singapore]
-
-  # --- 兜底 ---
+  # --- 地理节点池（Hong Kong → Taiwan → Japan → Korea → Singapore → US） ---
 
   # --- 地理节点池（依赖 provider filter 正则过滤）---
   - name: Hong Kong
@@ -243,19 +245,19 @@ proxy-groups:
     use: [sushi_cloud]
     url: "http://www.gstatic.com/generate_204"
     interval: 300
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/hk.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/HK.png"
     filter: "港|HK|(?i)Hong"
 
   - name: Taiwan
     type: select
     use: [sushi_cloud]
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/tw.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/TW.png"
     filter: "台|TW|(?i)Taiwan"
 
   - name: Japan
     type: select
     use: [sushi_cloud]
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/jp.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/JP.png"
     filter: "日|东京|JP|(?i)Tokyo|(?i)Japan"
 
   - name: Korea
@@ -263,7 +265,7 @@ proxy-groups:
     use: [sushi_cloud]
     url: "http://www.gstatic.com/generate_204"
     interval: 300
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/kr.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/KR.png"
     filter: "韩|首尔|KR|(?i)Korea"
 
   - name: Singapore
@@ -271,13 +273,13 @@ proxy-groups:
     use: [sushi_cloud]
     url: "http://www.gstatic.com/generate_204"
     interval: 300
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/sg.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/SG.png"
     filter: "Singapore|坡|狮城|SG|(?i)Singapore"
 
   - name: US
     type: select
     use: [sushi_cloud]
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/us.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/US.png"
     filter: "美|US|States|(?i)America"
 
   - name: DeepWep
@@ -306,15 +308,19 @@ rule-providers:
   ys_gemini:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Gemini/Gemini.yaml" }
 
-  # 社媒
+  # 社媒（Telegram → X → TikTok → Instagram → YouTube → Google）
+  ys_telegram:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Telegram/Telegram.yaml" }
+  ys_x:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/X/X.yaml" }
+  ys_tiktok:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/TikTok/TikTok.yaml" }
   ys_instagram:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Instagram/Instagram.yaml" }
   ys_youtube:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/YouTube/YouTube.yaml" }
   ys_google:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Google/Google.yaml" }
-  ys_x:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/X/X.yaml" }
 
   # 银行与券商
   ys_hsbc:
@@ -353,18 +359,10 @@ rule-providers:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Xbox/Xbox.yaml" }
   ys_microsoft:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Microsoft/Microsoft.yaml" }
-  ys_docker:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Docker/Docker.yaml" }
-  ys_nintendo:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Nintendo/Nintendo.yaml" }
 
   # 流媒体
-  ys_tiktok:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/TikTok/TikTok.yaml" }
   ys_netflix:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Netflix/Netflix.yaml" }
-  ys_telegram:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Telegram/Telegram.yaml" }
 
   # Loyalsoldier — 国内直连 / GFW / Apple / 中国 IP
   ls_lan:
@@ -397,11 +395,13 @@ rules:
   - RULE-SET,ys_claude,Claude
   - RULE-SET,ys_gemini,Gemini
 
-  # 第四层：社交媒体
+  # 第四层：社媒（Telegram → X → TikTok → Instagram → YouTube → Google）
+  - RULE-SET,ys_telegram,Telegram
+  - RULE-SET,ys_x,X
+  - RULE-SET,ys_tiktok,TikTok
   - RULE-SET,ys_instagram,Instagram
   - RULE-SET,ys_youtube,YouTube
   - RULE-SET,ys_google,Google
-  - RULE-SET,ys_x,X
 
   # 第五层：银行与券商
   - RULE-SET,ys_hsbc,HSBC Hong Kong
@@ -423,16 +423,12 @@ rules:
 
   # 第七层：开发者与游戏平台
   - RULE-SET,ys_github,GitHub
-  - RULE-SET,ys_docker,Default
   - RULE-SET,ys_steam,Steam
   - RULE-SET,ys_xbox,XBOX
   - RULE-SET,ys_microsoft,Microsoft
-  - RULE-SET,ys_nintendo,DIRECT
 
   # 第八层：流媒体
-  - RULE-SET,ys_tiktok,TikTok
   - RULE-SET,ys_netflix,NETFLIX
-  - RULE-SET,ys_telegram,Telegram
 
   # 巴哈姆特（台湾站）
   - DOMAIN-SUFFIX,gamer.com.tw,Taiwan
