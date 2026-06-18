@@ -298,55 +298,15 @@ rule-providers:
   bm_ad:
     { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising.yaml" }
 
-  # 券商（bgpeer）
-  ys_hsbc:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/HSBC/HSBC.yaml" }
-
-  # 券商户内联
-  ys_usmart:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/uSmart/uSmart.yaml" }
-
-  ys_zinvest:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Zinvest/Zinvest.yaml" }
-  ys_phillip:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Phillip/Phillip.yaml" }
-  ys_zircon:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Zircon/Zircon.yaml" }
-  ys_ibkr:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/IBKR/IBKR.yaml" }
-  ys_futu:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Futu/Futu.yaml" }
-  ys_longbridge:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Longbridge/Longbridge.yaml" }
-
-  # 加密货币交易所
-  ys_coinbase:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Coinbase/Coinbase.yaml" }
-  ys_osl:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OSL/OSL.yaml" }
-
-  ys_kraken:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Kraken/Kraken.yaml" }
-
   # AI 服务（ChatGPT → Claude → Gemini）
+  ys_chatgpt:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ChatGPT/ChatGPT.yaml" }
   ys_claude:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Claude/Claude.yaml" }
   ys_gemini:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Gemini/Gemini.yaml" }
-  ys_chatgpt:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ChatGPT/ChatGPT.yaml" }
 
-  # 加密货币综合
-  ys_crypto:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Crypto/Crypto.yaml" }
-
-  # 社交媒体与流媒体
-  ys_tiktok:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/TikTok/TikTok.yaml" }
-  ys_netflix:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Netflix/Netflix.yaml" }
-  ys_telegram:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Telegram/Telegram.yaml" }
+  # 社媒
   ys_instagram:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Instagram/Instagram.yaml" }
   ys_youtube:
@@ -356,21 +316,55 @@ rule-providers:
   ys_x:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/X/X.yaml" }
 
-  # 开发者平台
+  # 银行与券商
+  ys_hsbc:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/HSBC/HSBC.yaml" }
+  ys_ibkr:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/IBKR/IBKR.yaml" }
+  ys_futu:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Futu/Futu.yaml" }
+  ys_longbridge:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Longbridge/Longbridge.yaml" }
+  ys_usmart:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/uSmart/uSmart.yaml" }
+  ys_zinvest:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Zinvest/Zinvest.yaml" }
+  ys_phillip:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Phillip/Phillip.yaml" }
+  ys_zircon:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Zircon/Zircon.yaml" }
+
+  # 加密货币
+  ys_crypto:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Crypto/Crypto.yaml" }
+  ys_kraken:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Kraken/Kraken.yaml" }
+  ys_coinbase:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Coinbase/Coinbase.yaml" }
+  ys_osl:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OSL/OSL.yaml" }
+
+  # 开发者与游戏平台
   ys_github:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/GitHub/GitHub.yaml" }
-  ys_docker:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Docker/Docker.yaml" }
-
-  # 游戏平台
   ys_steam:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Steam/Steam.yaml" }
   ys_xbox:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Xbox/Xbox.yaml" }
   ys_microsoft:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Microsoft/Microsoft.yaml" }
+  ys_docker:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Docker/Docker.yaml" }
   ys_nintendo:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Nintendo/Nintendo.yaml" }
+
+  # 流媒体
+  ys_tiktok:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/TikTok/TikTok.yaml" }
+  ys_netflix:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Netflix/Netflix.yaml" }
+  ys_telegram:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Telegram/Telegram.yaml" }
 
   # Loyalsoldier — 国内直连 / GFW / Apple / 中国 IP
   ls_lan:
@@ -398,49 +392,47 @@ rules:
   - DOMAIN-SUFFIX,ut.taobao.com,REJECT
   - DOMAIN-SUFFIX,bugly.qq.com,REJECT
 
-  # 第三层：银行与券商 — bgpeer RULE-SET + 关键域内联兜底
+  # 第三层：AI 服务（ChatGPT → Claude → Gemini）
+  - RULE-SET,ys_chatgpt,ChatGPT
+  - RULE-SET,ys_claude,Claude
+  - RULE-SET,ys_gemini,Gemini
+
+  # 第四层：社交媒体
+  - RULE-SET,ys_instagram,Instagram
+  - RULE-SET,ys_youtube,YouTube
+  - RULE-SET,ys_google,Google
+  - RULE-SET,ys_x,X
+
+  # 第五层：银行与券商
   - RULE-SET,ys_hsbc,HSBC Hong Kong
   - DOMAIN-SUFFIX,hsbcbroker.com,HSBC Hong Kong
   - DOMAIN-SUFFIX,securities.hsbc.com.hk,HSBC Hong Kong
   - RULE-SET,ys_ibkr,Interactive Brokers
   - RULE-SET,ys_futu,Futu
   - RULE-SET,ys_longbridge,Longbridge
-
-  # 第四层：加密货币交易所（须在泛 Crypto 之前，防止覆盖）
-  - RULE-SET,ys_coinbase,Coinbase
-  - RULE-SET,ys_kraken,Kraken
-  - RULE-SET,ys_osl,OSL
-
-  # 第五层：券商（手动内联域）
   - RULE-SET,ys_usmart,uSmart
   - RULE-SET,ys_zinvest,Zinvest
   - RULE-SET,ys_phillip,Phillip
-
   - RULE-SET,ys_zircon,Zircon
-  # 第六层：AI 服务（ChatGPT → Claude → Gemini）
-  - RULE-SET,ys_chatgpt,ChatGPT
-  - RULE-SET,ys_claude,Claude
-  - RULE-SET,ys_gemini,Gemini
 
-  # 第七层：泛加密货币综合
+  # 第六层：加密货币
+  - RULE-SET,ys_coinbase,Coinbase
+  - RULE-SET,ys_kraken,Kraken
+  - RULE-SET,ys_osl,OSL
   - RULE-SET,ys_crypto,Crypto
 
-  # 第八层：社交媒体与流媒体
-  - RULE-SET,ys_tiktok,TikTok
-  - RULE-SET,ys_netflix,NETFLIX
-  - RULE-SET,ys_telegram,Telegram
-  - RULE-SET,ys_instagram,Instagram
-  - RULE-SET,ys_youtube,YouTube
-  - RULE-SET,ys_google,Google
-  - RULE-SET,ys_x,X
-
-  # 第九层：开发者工具与游戏平台
+  # 第七层：开发者与游戏平台
   - RULE-SET,ys_github,GitHub
   - RULE-SET,ys_docker,Default
   - RULE-SET,ys_steam,Steam
   - RULE-SET,ys_xbox,XBOX
   - RULE-SET,ys_microsoft,Microsoft
   - RULE-SET,ys_nintendo,DIRECT
+
+  # 第八层：流媒体
+  - RULE-SET,ys_tiktok,TikTok
+  - RULE-SET,ys_netflix,NETFLIX
+  - RULE-SET,ys_telegram,Telegram
 
   # 巴哈姆特（台湾站）
   - DOMAIN-SUFFIX,gamer.com.tw,Taiwan
