@@ -455,6 +455,20 @@ rule-providers:
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Netflix/Netflix.yaml"
 
+  # 其他（无独立策略组，走 Default / DIRECT）
+  ys_docker:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Docker/Docker.yaml"
+
+  ys_nintendo:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Nintendo/Nintendo.yaml"
 
   # Loyalsoldier — 国内直连 / GFW / Apple / 中国 IP
   ls_lan:
@@ -550,6 +564,10 @@ rules:
 
   # 第八层：流媒体
   - RULE-SET,ys_netflix,NETFLIX
+
+  # 其他（无独立策略组）
+  - RULE-SET,ys_docker,Default
+  - RULE-SET,ys_nintendo,DIRECT
 
   # 巴哈姆特
   - DOMAIN-SUFFIX,gamer.com.tw,Taiwan
