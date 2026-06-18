@@ -1,5 +1,5 @@
 # =====================================================================
-# Clash 分流 (Loyalsoldier + blackmatrix7 + bgpeer)
+# Clash 分流
 # 适配环境：Clash Verge / Clash Meta / OpenClash
 # 规则模型：洋葱过滤 → 广告拒止 → 券商/加密精准注入 → 服务分流 → 国内直连 → GFW 代理 → MATCH 兜底
 # =====================================================================
@@ -18,6 +18,7 @@ tcp-concurrent: true
 
 profile:
   store-selected: true
+  store-fake-ip: true
 
 # =====================================================================
 # Sniffer — 域名嗅探
@@ -34,7 +35,8 @@ sniffer:
     QUIC:
       ports: [443, 8443]
   skip-domain:
-    - "Mijia Cloud"
+    - "+.mijia.xiaomi.com"
+    - "+.mi.com"
     - "+.push.apple.com"
     - "+.apple.com"
 
@@ -63,6 +65,9 @@ dns:
   fake-ip-range: 198.18.0.1/16
   respect-rules: true
   
+  fake-ip-filter:  
+    - api.sushi3.cloud
+  
   proxy-server-nameserver:
     - 223.5.5.5
     - 119.29.29.29
@@ -77,12 +82,12 @@ dns:
       - 119.29.29.29
 
 # =====================================================================
-# [Proxy Providers]
+# [Proxy Providers] — Sushi Cloud 节点池
 # =====================================================================
 proxy-providers:
   sushi_cloud:
     type: http
-    url: "YOUR_SUBSCRIPTION_URL"
+    url: "https://api.sushi3.cloud/sushi/6ad622be288cabb665e98824670d17d7"
     path: ./sushi_provider.yaml
     interval: 36000
     health-check:
@@ -101,7 +106,7 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Shadowrocket.png"
     proxies: [DIRECT, Hong Kong, Taiwan, Japan, Korea, Singapore, US, DeepWep]
 
-  # --- AI 服务（ChatGPT → Claude → Gemini） ---
+  # --- AI 服务  ---
   - name: ChatGPT
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ChatGPT.png"
@@ -117,26 +122,26 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Gemini.png"
     proxies: [US]
 
-  # --- 社交媒体（Telegram → X → TikTok → Instagram → YouTube → Google） ---
+  # --- 社交媒体 ---
   - name: Telegram
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Telegram.png"
-    proxies: [Hong Kong, Korea, Singapore]
-
+    proxies: [Hong Kong, Korea, Singapore, DeepWep]
+    
   - name: X
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/X.png"
     proxies: [Taiwan, Japan, US]
-
+    
   - name: TikTok
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/TikTok.png"
     proxies: [Japan, Korea]
-
+       
   - name: Instagram
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Instagram.png"
-    proxies: [Japan, Korea, US]
+    proxies: [Japan, Korea]
 
   - name: YouTube
     type: select
@@ -148,7 +153,7 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Google.png"
     proxies: [Taiwan, Japan, US]
 
-  # --- 银行与券商（HSBC Hong Kong → Interactive Brokers → Futu → Longbridge → uSmart → Zinvest → Phillip → Zircon） ---
+  # --- 银行与券商 ---
   - name: HSBC Hong Kong
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/HSBC_HK.png"
@@ -189,20 +194,20 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Zircon.png"
     proxies: [DIRECT, Hong Kong, Taiwan, Japan, Singapore]
 
-  # --- 加密货币（Crypto → Kraken → Coinbase → OSL） ---
+  # --- 加密货币 ---
   - name: Crypto
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/BTC.png"
     proxies: [Taiwan, Japan, Singapore]
 
-  - name: Kraken
-    type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Kraken.png"
-    proxies: [US]
-
   - name: Coinbase
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Coinbase.png"
+    proxies: [US]
+
+  - name: Kraken
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Kraken.png"
     proxies: [US]
 
   - name: OSL
@@ -210,7 +215,7 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/OSL.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
-  # --- 开发者与游戏平台（GitHub → Steam → XBOX → Microsoft） ---
+  # --- 开发者与游戏平台 ---
   - name: GitHub
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/GitHub.png"
@@ -226,25 +231,19 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/XBOX.png"
     proxies: [DIRECT, Default, Hong Kong]
 
-  - name: Microsoft
-    type: select
-    icon: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/icon/color/microsoft.png"
-    proxies: [DIRECT, Default]
-
-  # --- 流媒体（NETFLIX） ---
+  # --- 流媒体 ---
   - name: NETFLIX
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Netflix.png"
     proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, US]
 
-  # --- 地理节点池（Hong Kong → Taiwan → Japan → Korea → Singapore → US） ---
-
-  # --- 地理节点池（依赖 provider filter 正则过滤）---
+  # --- 地理节点池 ---
   - name: Hong Kong
     type: url-test
     use: [sushi_cloud]
     url: "http://www.gstatic.com/generate_204"
     interval: 300
+    tolerance: 50
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/HK.png"
     filter: "港|HK|(?i)Hong"
 
@@ -265,6 +264,7 @@ proxy-groups:
     use: [sushi_cloud]
     url: "http://www.gstatic.com/generate_204"
     interval: 300
+    tolerance: 50
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/KR.png"
     filter: "韩|首尔|KR|(?i)Korea"
 
@@ -273,6 +273,7 @@ proxy-groups:
     use: [sushi_cloud]
     url: "http://www.gstatic.com/generate_204"
     interval: 300
+    tolerance: 50
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/SG.png"
     filter: "Singapore|坡|狮城|SG|(?i)Singapore"
 
@@ -284,6 +285,10 @@ proxy-groups:
 
   - name: DeepWep
     type: url-test
+    use: [sushi_cloud]
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/DeepWep.png"
     exclude-filter: "续费|到期|剩余|官网|提示|通知|公告|网站|地址"
 
@@ -293,14 +298,14 @@ proxy-groups:
 rule-providers:
   ls_dom: &ls_dom { type: http, behavior: domain, format: text, interval: 86400 }
   ls_ip: &ls_ip { type: http, behavior: ipcidr, format: text, interval: 86400 }
-  bm_cls: &bm_cls { type: http, behavior: classical, format: yaml, interval: 86400 }
   ys_cls: &ys_cls { type: http, behavior: classical, format: yaml, interval: 86400 }
+  bm_cls: &bm_cls { type: http, behavior: classical, format: yaml, interval: 86400 }
 
-  # 广告
+  # --- 广告 ---
   bm_ad:
     { <<: *bm_cls, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising.yaml" }
 
-  # AI 服务（ChatGPT → Claude → Gemini）
+  # --- AI 服务 ---
   ys_chatgpt:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ChatGPT/ChatGPT.yaml" }
   ys_claude:
@@ -308,7 +313,7 @@ rule-providers:
   ys_gemini:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Gemini/Gemini.yaml" }
 
-  # 社媒（Telegram → X → TikTok → Instagram → YouTube → Google）
+  # --- 社交媒体 ---
   ys_telegram:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Telegram/Telegram.yaml" }
   ys_x:
@@ -322,7 +327,7 @@ rule-providers:
   ys_google:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Google/Google.yaml" }
 
-  # 银行与券商
+  # --- 银行与券商 ---
   ys_hsbc:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/HSBC/HSBC.yaml" }
   ys_ibkr:
@@ -340,37 +345,37 @@ rule-providers:
   ys_zircon:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Zircon/Zircon.yaml" }
 
-  # 加密货币
+  # --- 加密货币 ---
   ys_crypto:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Crypto/Crypto.yaml" }
-  ys_kraken:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Kraken/Kraken.yaml" }
   ys_coinbase:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Coinbase/Coinbase.yaml" }
+  ys_kraken:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Kraken/Kraken.yaml" }
   ys_osl:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OSL/OSL.yaml" }
 
-  # 开发者与游戏平台
+  # --- 开发者与游戏平台 ---
   ys_github:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/GitHub/GitHub.yaml" }
   ys_steam:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Steam/Steam.yaml" }
   ys_xbox:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Xbox/Xbox.yaml" }
-  ys_microsoft:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Microsoft/Microsoft.yaml" }
 
-  # 流媒体
+  # --- 流媒体 ---
   ys_netflix:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Netflix/Netflix.yaml" }
 
-  # 其他（无独立策略组，走 Default / DIRECT）
-  ys_docker:
-    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Docker/Docker.yaml" }
+  # --- 其他（无独立策略组，走 Default / DIRECT） ---
+  ys_microsoft:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Microsoft/Microsoft.yaml" }
   ys_nintendo:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Nintendo/Nintendo.yaml" }
+  ys_docker:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Docker/Docker.yaml" }
 
-  # Loyalsoldier — 国内直连 / GFW / Apple / 中国 IP
+  # --- Loyalsoldier — 国内直连 / GFW / Apple / 中国 IP ---
   ls_lan:
     { <<: *ls_ip, url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt" }
   ls_direct:
@@ -388,20 +393,20 @@ rule-providers:
 # [规则匹配逻辑 - 九层洋葱过滤模型]
 # =====================================================================
 rules:
-  # 第一层：局域网与进程绕过
+  # --- 第一层：局域网与进程绕过 ---
   - RULE-SET,ls_lan,DIRECT,no-resolve
 
-  # 第二层：广告屏蔽
+  # --- 第二层：广告屏蔽 ---
   - RULE-SET,bm_ad,REJECT
   - DOMAIN-SUFFIX,ut.taobao.com,REJECT
   - DOMAIN-SUFFIX,bugly.qq.com,REJECT
 
-  # 第三层：AI 服务（ChatGPT → Claude → Gemini）
+  # --- 第三层：AI 服务 ---
   - RULE-SET,ys_chatgpt,ChatGPT
   - RULE-SET,ys_claude,Claude
   - RULE-SET,ys_gemini,Gemini
 
-  # 第四层：社媒（Telegram → X → TikTok → Instagram → YouTube → Google）
+  # --- 第四层：社交媒体 ---
   - RULE-SET,ys_telegram,Telegram
   - RULE-SET,ys_x,X
   - RULE-SET,ys_tiktok,TikTok
@@ -409,10 +414,8 @@ rules:
   - RULE-SET,ys_youtube,YouTube
   - RULE-SET,ys_google,Google
 
-  # 第五层：银行与券商
+  # --- 第五层：银行与券商 ---
   - RULE-SET,ys_hsbc,HSBC Hong Kong
-  - DOMAIN-SUFFIX,hsbcbroker.com,HSBC Hong Kong
-  - DOMAIN-SUFFIX,securities.hsbc.com.hk,HSBC Hong Kong
   - RULE-SET,ys_ibkr,Interactive Brokers
   - RULE-SET,ys_futu,Futu
   - RULE-SET,ys_longbridge,Longbridge
@@ -421,40 +424,38 @@ rules:
   - RULE-SET,ys_phillip,Phillip
   - RULE-SET,ys_zircon,Zircon
 
-  # 第六层：加密货币
+  # --- 第六层：加密货币 ---
+  - RULE-SET,ys_crypto,Crypto
   - RULE-SET,ys_coinbase,Coinbase
   - RULE-SET,ys_kraken,Kraken
   - RULE-SET,ys_osl,OSL
-  - RULE-SET,ys_crypto,Crypto
 
-  # 第七层：开发者与游戏平台
+  # --- 第七层：开发者与游戏平台 ---
   - RULE-SET,ys_github,GitHub
   - RULE-SET,ys_steam,Steam
   - RULE-SET,ys_xbox,XBOX
-  - RULE-SET,ys_microsoft,Microsoft
 
-  # 第八层：流媒体
+  # --- 第八层：流媒体 ---
   - RULE-SET,ys_netflix,NETFLIX
 
-  # 其他（无独立策略组）
-  - RULE-SET,ys_docker,Default
+  # --- 其他（无独立策略组） ---
+  - RULE-SET,ys_microsoft,DIRECT
   - RULE-SET,ys_nintendo,DIRECT
+  - RULE-SET,ys_docker,DeepWep
 
-  # 巴哈姆特（台湾站）
+  # --- 巴哈姆特（台湾站） ---
   - DOMAIN-SUFFIX,gamer.com.tw,Taiwan
 
-  # Apple 服务 → 国内直连
+  # --- Apple 服务 → 国内直连 ---
   - RULE-SET,ls_apple,DIRECT
 
-  # 国内域名 → 直连
+  # --- 中国 IP → 直连 ---
   - RULE-SET,ls_direct,DIRECT
-
-  # GFW / 代理列表 → 兜底策略
-  - RULE-SET,ls_gfw,Default
-  - RULE-SET,ls_proxy,Default
-
-  # 中国 IP → 直连（no-resolve）
   - RULE-SET,ls_cncidr,DIRECT,no-resolve
 
-  # 终局
-  - MATCH,Default
+  # --- GFW / 代理列表 → 兜底策略 ---
+  - RULE-SET,ls_gfw,DeepWep
+  - RULE-SET,ls_proxy,DeepWep
+
+  # --- 终局 ---
+  - MATCH,DeepWep
