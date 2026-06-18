@@ -97,37 +97,42 @@ proxy-groups:
   - name: HSBC Hong Kong
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/HSBC_HK.png"
-    proxies: [Hong Kong, Taiwan, Japan, Singapore]
+    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Singapore]
 
   - name: Interactive Brokers
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/IBKR.png"
     proxies: [DIRECT, US]
 
+  - name: Futu
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Futu.png"
+    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Singapore]
+
   - name: Longbridge
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Longbridge.png"
-    proxies: [Hong Kong, Taiwan, Japan, Singapore]
+    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Singapore]
 
   - name: uSmart
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/uSmart.png"
-    proxies: [Hong Kong, Taiwan, Japan, Singapore]
+    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Singapore]
 
   - name: Zinvest
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Zinvest.png"
-    proxies: [Hong Kong, Taiwan, Japan, Singapore]
+    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Singapore]
 
   - name: Phillip
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Phillip.png"
-    proxies: [Hong Kong, Taiwan, Japan, Singapore]
+    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Singapore]
 
   - name: Zircon
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Zircon.png"
-    proxies: [Hong Kong, Taiwan, Japan, Singapore]
+    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Singapore]
 
   # --- 加密货币 ---
   - name: Crypto
@@ -265,6 +270,13 @@ rule-providers:
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/IBKR/IBKR.yaml"
+
+  ys_futu:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Futu/Futu.yaml"
 
   ys_longbridge:
     type: http
@@ -509,6 +521,7 @@ rules:
   - DOMAIN-SUFFIX,hsbcbroker.com,HSBC Hong Kong
   - DOMAIN-SUFFIX,securities.hsbc.com.hk,HSBC Hong Kong
   - RULE-SET,ys_ibkr,Interactive Brokers
+  - RULE-SET,ys_futu,Futu
   - RULE-SET,ys_longbridge,Longbridge
 
   # 第四层：加密货币交易所（须在泛 Crypto 之前，防止覆盖）
