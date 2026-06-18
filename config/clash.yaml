@@ -364,6 +364,12 @@ rule-providers:
   ys_netflix:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Netflix/Netflix.yaml" }
 
+  # 其他（无独立策略组，走 Default / DIRECT）
+  ys_docker:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Docker/Docker.yaml" }
+  ys_nintendo:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Nintendo/Nintendo.yaml" }
+
   # Loyalsoldier — 国内直连 / GFW / Apple / 中国 IP
   ls_lan:
     { <<: *ls_ip, url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt" }
@@ -429,6 +435,10 @@ rules:
 
   # 第八层：流媒体
   - RULE-SET,ys_netflix,NETFLIX
+
+  # 其他（无独立策略组）
+  - RULE-SET,ys_docker,Default
+  - RULE-SET,ys_nintendo,DIRECT
 
   # 巴哈姆特（台湾站）
   - DOMAIN-SUFFIX,gamer.com.tw,Taiwan
