@@ -25,10 +25,29 @@ dns:
   enable: true
   ipv6: false
   enhanced-mode: fake-ip
-  nameserver:
+  default-nameserver:
     - 223.5.5.5
-    - 119.29.29.29
-
+    - 114.114.114.114
+    - system
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+    - quic://dns.adguard.com:853
+    - doq://test.dns.nextdns.io:853
+    - system
+  skip-cert-verify: true
+  fake-ip-filter:
+    - '+.stun.*.*'
+    - '+.stun.*.*.*'
+    - '+.stun.*.*.*.*'
+    - '+.stun.*.*.*.*.*'
+    - 'lens.l.google.com'
+    - '*.n.n.srv.nintendo.net'
+    - '+.stun.playstation.net'
+    - 'xbox.*.*.microsoft.com'
+    - '*.*.xboxlive.com'
+    - '*.msftncsi.com'
+    - '*.msftconnecttest.com'
 
 # =====================================================================
 # [Proxy Providers] — Sushi Cloud 节点池
@@ -571,4 +590,4 @@ rules:
   - RULE-SET,ls_proxy,DeepWep
 
   # --- 终局 ---
-  - MATCH,DeepWep
+  - MATCH,Default
