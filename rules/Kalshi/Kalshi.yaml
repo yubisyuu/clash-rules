@@ -2,13 +2,11 @@
 # AUTHOR: yubisyuu
 # REPO: https://github.com/yubisyuu/clash-rules
 # UPDATED: 2026-06-28 13:50:00
-# DOMAIN-SUFFIX: 7
-# TOTAL: 7
+# DOMAIN-SUFFIX: 5
+# TOTAL: 5
 payload:
   - DOMAIN-SUFFIX,kalshi.com
   - DOMAIN-SUFFIX,www.kalshi.com
-  - DOMAIN-SUFFIX,api.kalshi.com
   - DOMAIN-SUFFIX,docs.kalshi.com
   - DOMAIN-SUFFIX,help.kalshi.com
-  - DOMAIN-SUFFIX,trade.kalshi.com
   - DOMAIN-SUFFIX,app.kalshi.com
