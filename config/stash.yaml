@@ -121,6 +121,16 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Google.png"
     proxies: [Taiwan, Japan, US]
 
+  - name: Discord
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Discord.png"
+    proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, US, GB, DE, DeepWep]
+
+  - name: Reddit
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Reddit.png"
+    proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, US, GB, DE, DeepWep]
+
   # --- 银行与券商 ---
   - name: HSBC Hong Kong
     type: select
@@ -182,6 +192,12 @@ proxy-groups:
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/OSL.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
+
+  # --- 预测市场 ---
+  - name: Kalshi
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Kalshi.png"
+    proxies: [US]
 
   # --- 开发者与游戏平台 ---
   - name: GitHub
@@ -250,6 +266,24 @@ proxy-groups:
     use: [sushi_cloud]
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/US.png"
     filter: "美|US|States|(?i)America"
+
+  - name: GB
+    type: url-test
+    use: [sushi_cloud]
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/GB.png"
+    filter: "英|UK|GB|(?i)Kingdom"
+
+  - name: DE
+    type: url-test
+    use: [sushi_cloud]
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/DE.png"
+    filter: "德|DE|(?i)Germany"
 
   - name: DeepWep
     type: url-test
@@ -338,6 +372,20 @@ rule-providers:
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Google/Google.yaml"
 
+  ys_discord:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Discord/Discord.yaml"
+
+  ys_reddit:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Reddit/Reddit.yaml"
+
   # 银行与券商
   ys_hsbc:
     type: http
@@ -423,6 +471,14 @@ rule-providers:
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OSL/OSL.yaml"
+
+  # 预测市场
+  ys_kalshi:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Kalshi/Kalshi.yaml"
 
   # 开发者与游戏平台
   ys_github:
@@ -543,6 +599,8 @@ rules:
   - RULE-SET,ys_instagram,Instagram
   - RULE-SET,ys_youtube,YouTube
   - RULE-SET,ys_google,Google
+  - RULE-SET,ys_discord,Discord
+  - RULE-SET,ys_reddit,Reddit
 
   # --- 第五层：银行与券商 ---
   - RULE-SET,ys_hsbc,HSBC Hong Kong
@@ -559,6 +617,9 @@ rules:
   - RULE-SET,ys_coinbase,Coinbase
   - RULE-SET,ys_kraken,Kraken
   - RULE-SET,ys_osl,OSL
+
+  # --- 预测市场 ---
+  - RULE-SET,ys_kalshi,Kalshi
 
   # --- 第七层：开发者与游戏平台 ---
   - RULE-SET,ys_github,GitHub
