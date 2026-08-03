@@ -1,0 +1,5 @@
+# NAME: OKX
+# AUTHOR: yubisyuu
+# SOURCE: extracted from Crypto rule set
+DOMAIN-KEYWORD,okx
+PROCESS-NAME,OKX.exe

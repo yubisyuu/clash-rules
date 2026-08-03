@@ -3,10 +3,10 @@
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2025-06-06 09:20:01
 # DOMAIN: 1
-# DOMAIN-KEYWORD: 4
+# DOMAIN-KEYWORD: 2
 # DOMAIN-SUFFIX: 196
-# PROCESS-NAME: 3
-# TOTAL: 204
+# PROCESS-NAME: 1
+# TOTAL: 200
 payload:
   - DOMAIN,token-api.metaswap.codefi.network
   - DOMAIN-SUFFIX,1inch.io
@@ -205,10 +205,6 @@ payload:
   - DOMAIN-SUFFIX,zb.live
   - DOMAIN-SUFFIX,zkscan.io
   - DOMAIN-SUFFIX,zksync.io
-  - DOMAIN-KEYWORD,binance
   - DOMAIN-KEYWORD,huobi
   - DOMAIN-KEYWORD,metamask
-  - DOMAIN-KEYWORD,okx
-  - PROCESS-NAME,Binance.exe
   - PROCESS-NAME,Huobi.exe
-  - PROCESS-NAME,OKX.exe
