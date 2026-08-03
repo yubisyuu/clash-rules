@@ -386,6 +386,10 @@ rule-providers:
   # --- 加密货币 ---
   ys_crypto:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Crypto/Crypto.yaml" }
+  ys_binance:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Binance/Binance.yaml" }
+  ys_okx:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OKX/OKX.yaml" }
   ys_coinbase:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Coinbase/Coinbase.yaml" }
   ys_kraken:
@@ -469,6 +473,8 @@ rules:
   - RULE-SET,ys_zircon,Zircon
 
   # --- 第六层：加密货币 ---
+  - RULE-SET,ys_binance,Binance
+  - RULE-SET,ys_okx,OKX
   - RULE-SET,ys_crypto,Crypto
   - RULE-SET,ys_coinbase,Coinbase
   - RULE-SET,ys_kraken,Kraken

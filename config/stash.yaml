@@ -451,6 +451,20 @@ rule-providers:
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Crypto/Crypto.yaml"
 
+  ys_binance:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Binance/Binance.yaml"
+
+  ys_okx:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OKX/OKX.yaml"
+
   ys_coinbase:
     type: http
     behavior: classical
@@ -613,6 +627,8 @@ rules:
   - RULE-SET,ys_zircon,Zircon
 
   # --- 第六层：加密货币 ---
+  - RULE-SET,ys_binance,Binance
+  - RULE-SET,ys_okx,OKX
   - RULE-SET,ys_crypto,Crypto
   - RULE-SET,ys_coinbase,Coinbase
   - RULE-SET,ys_kraken,Kraken
