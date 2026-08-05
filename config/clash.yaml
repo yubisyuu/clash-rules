@@ -210,6 +210,16 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/BTC.png"
     proxies: [Taiwan, Japan, Singapore]
 
+  - name: Binance
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Binance.png"
+    proxies: [Hong Kong, Taiwan, Japan, Singapore]
+
+  - name: OKX
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/OKX.png"
+    proxies: [Hong Kong, Taiwan, Japan, Singapore]
+
   - name: Coinbase
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Coinbase.png"
