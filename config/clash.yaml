@@ -452,17 +452,20 @@ rules:
   # --- 第一层：局域网与进程绕过 ---
   - RULE-SET,ls_lan,DIRECT,no-resolve
 
-  # --- 第二层：广告屏蔽 ---
+  # --- 第二层：临时验证·美团三快 IP 直连 ---
+  - IP-CIDR,202.90.108.13/32,DIRECT,no-resolve
+
+  # --- 第三层：广告屏蔽 ---
   - RULE-SET,bm_ad,REJECT
   - DOMAIN-SUFFIX,ut.taobao.com,REJECT
   - DOMAIN-SUFFIX,bugly.qq.com,REJECT
 
-  # --- 第三层：AI 服务 ---
+  # --- 第四层：AI 服务 ---
   - RULE-SET,ys_chatgpt,ChatGPT
   - RULE-SET,ys_claude,Claude
   - RULE-SET,ys_gemini,Gemini
 
-  # --- 第四层：社交媒体 ---
+  # --- 第五层：社交媒体 ---
   - RULE-SET,ys_telegram,Telegram
   - RULE-SET,ys_x,X
   - RULE-SET,ys_tiktok,TikTok
@@ -472,7 +475,7 @@ rules:
   - RULE-SET,ys_discord,Discord
   - RULE-SET,ys_reddit,Reddit
 
-  # --- 第五层：银行与券商 ---
+  # --- 第六层：银行与券商 ---
   - RULE-SET,ys_hsbc,HSBC Hong Kong
   - RULE-SET,ys_ibkr,Interactive Brokers
   - RULE-SET,ys_futu,Futu
@@ -482,7 +485,7 @@ rules:
   - RULE-SET,ys_phillip,Phillip
   - RULE-SET,ys_zircon,Zircon
 
-  # --- 第六层：加密货币 ---
+  # --- 第七层：加密货币 ---
   - RULE-SET,ys_binance,Binance
   - RULE-SET,ys_okx,OKX
   - RULE-SET,ys_crypto,Crypto
@@ -493,12 +496,12 @@ rules:
   # --- 预测市场 ---
   - RULE-SET,ys_kalshi,Kalshi
 
-  # --- 第七层：开发者与游戏平台 ---
+  # --- 第八层：开发者与游戏平台 ---
   - RULE-SET,ys_github,GitHub
   - RULE-SET,ys_steam,Steam
   - RULE-SET,ys_xbox,XBOX
 
-  # --- 第八层：流媒体 ---
+  # --- 第九层：流媒体 ---
   - RULE-SET,ys_netflix,NETFLIX
 
   # --- 其他（无独立策略组） ---
