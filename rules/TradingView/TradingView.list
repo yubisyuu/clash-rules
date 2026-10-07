@@ -1,6 +1,13 @@
 # NAME: TradingView
 # AUTHOR: yubisyuu
-# SOURCE: extracted from Crypto rule set
+# SOURCE: blackmatrix7 Crypto + dedicated TradingView rule sets
 # DOMAIN-SUFFIX: 1
-# TOTAL: 1
+# DOMAIN-KEYWORD: 1
+# PROCESS-NAME: 4
+# TOTAL: 6
 DOMAIN-SUFFIX,tradingview.com
+DOMAIN-KEYWORD,tradingview
+PROCESS-NAME,TradingView.exe
+PROCESS-NAME,TradingView
+PROCESS-NAME,TradingView Helper
+PROCESS-NAME,com.tradingview.tradingviewapp
