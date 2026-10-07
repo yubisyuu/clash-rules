@@ -4,8 +4,7 @@
 # UPDATED: 2025-06-06 09:16:55
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 246
-# USER-AGENT: 1
-# TOTAL: 248
+# TOTAL: 247
 payload:
   - DOMAIN-SUFFIX,account-paypal.info
   - DOMAIN-SUFFIX,account-paypal.net
@@ -254,4 +253,3 @@ payload:
   - DOMAIN-SUFFIX,xoom.us
   - DOMAIN-SUFFIX,xoomcom.com
   - DOMAIN-KEYWORD,paypal
-  - USER-AGENT,PayPal*
