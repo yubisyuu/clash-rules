@@ -1,0 +1,7 @@
+# NAME: Wise
+# AUTHOR: yubisyuu
+# SOURCE: v2fly domain-list-community geosite:wise + dedicated Wise rule sets
+# DOMAIN-SUFFIX: 2
+# TOTAL: 2
+DOMAIN-SUFFIX,wise.com
+DOMAIN-SUFFIX,transferwise.com
