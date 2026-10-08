@@ -113,17 +113,17 @@ proxy-groups:
   - name: X
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/X.png"
-    proxies: [Taiwan, Japan, United States]
+    proxies: [Hong Kong,Taiwan, Japan, United States]
 
   - name: TikTok
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/TikTok.png"
-    proxies: [Taiwan, Japan, Korea]
+    proxies: [Hong Kong,Taiwan, Japan, Korea]
 
   - name: Instagram
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Instagram.png"
-    proxies: [Taiwan, Japan, Korea]
+    proxies: [Hong Kong,Taiwan, Japan, Korea]
 
   - name: YouTube
     type: select
@@ -243,11 +243,10 @@ proxy-groups:
 
   # --- 地理节点池 ---
   - name: Hong Kong
-    type: url-test
+    type: select
     use: [cocoduck]
     url: "https://www.gstatic.com/generate_204"
     interval: 300
-    tolerance: 50
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/HK.png"
     filter: "香港|HK|(?i)Hong"
 
@@ -492,7 +491,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/DeepWep.png"
-    exclude-filter: "续费|到期|剩余|官网|提示|通知|公告|网站|地址"
+    exclude-filter: "续费|到期|剩余|官网|提示|通知|公告|网站|地址|订阅|邀请"
 
 # =====================================================================
 # [YAML 锚点模板] — 非 provider，仅供下方 rule-providers 合并引用
