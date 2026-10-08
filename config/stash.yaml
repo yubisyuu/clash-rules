@@ -1,11 +1,11 @@
 # =====================================================================
 # Stash 分流规则
 # 适配环境：Stash (iOS / macOS / tvOS / visionOS)
-# 规则模型：洋葱过滤 → 广告拒止 → 券商/加密精准注入 → 服务分流 → 国内直连 → GFW 代理 → MATCH 兜底
+# 规则模型：洋葱过滤 → 广告拒止 → 服务精准分流（AI → 社媒 → 券商 → 钱包 → 加密 → 预测 → 开发 → 流媒体）→ 国内直连 → GFW/代理列表 → MATCH 兜底
 # =====================================================================
 
 # =====================================================================
-# [全局基础] — Stash 须拆分端口
+# [全局基础] — 端口 / 模式 / IPv6（unified-delay / tcp-concurrent / find-process-mode 无 Stash 对应项）
 # =====================================================================
 port: 7890
 socks-port: 7891
@@ -19,7 +19,7 @@ profile:
   store-selected: true
 
 # =====================================================================
-# DNS — Stash 简化版（不支持 fake-ip-range / cache-algorithm / listen / respect-rules）
+# [DNS] — Fake-IP（解析器集合与 Clash 对齐；listen / cache-algorithm / fake-ip-range / respect-rules / nameserver-policy 无 Stash 对应项）
 # =====================================================================
 dns:
   enable: true
@@ -28,12 +28,12 @@ dns:
   default-nameserver:
     - 223.5.5.5
     - 114.114.114.114
+    - 119.29.29.29
     - system
   nameserver:
     - https://doh.pub/dns-query
+    - tls://223.5.5.5:853
     - https://dns.alidns.com/dns-query
-    - quic://dns.adguard.com:853
-    - doq://test.dns.nextdns.io:853
     - system
   skip-cert-verify: true
   fake-ip-filter:
@@ -50,21 +50,25 @@ dns:
     - '*.msftconnecttest.com'
 
 # =====================================================================
-# [Proxy Providers] — Sushi Cloud 节点池
+# [Proxy Providers] — 机场订阅（单订阅，键名与 path 成对）
 # =====================================================================
 proxy-providers:
-  sushi_cloud:
+  cocoduck:
     type: http
-    url: "你的订阅链接"
-    path: ./sushi_provider.yaml
+    url: "https://sub.cocoduck.cc/sub/1cacb1b806ac5b83/clash#COCODUCK"
+    path: ./cocoduck_provider.yaml
     interval: 36000
     health-check:
       enable: true
-      url: http://www.gstatic.com/generate_204
+      url: https://www.gstatic.com/generate_204
       interval: 300
 
 # =====================================================================
 # [Proxy Groups] — 洋葱过滤核心
+# =====================================================================
+
+# =====================================================================
+# [Proxy Groups] — 洋葱过滤核心（32 服务组 + 28 地理池，与 Clash 同构）
 # =====================================================================
 proxy-groups:
 
@@ -72,75 +76,75 @@ proxy-groups:
   - name: Default
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Shadowrocket.png"
-    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Korea, Singapore, US, DeepWep]
+    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Korea, Singapore, United States, Germany, United Kingdom, France, Canada, Australia, Russia, India, Spain, Sweden, Switzerland, United Arab Emirates, Finland, Ireland, Turkey, Indonesia, Portugal, Thailand, Malaysia, Greece, Philippines, Cambodia, DeepWep]
 
   # --- AI 服务 ---
   - name: ChatGPT
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ChatGPT.png"
-    proxies: [US]
-
-  - name: Claude
-    type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Claude.png"
-    proxies: [US]
+    proxies: [United States, Taiwan, Japan, Korea, Singapore]
 
   - name: Gemini
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Gemini.png"
-    proxies: [US]
+    proxies: [United States, Taiwan, Japan, Korea, Singapore]
 
   # --- 社交媒体 ---
   - name: Telegram
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Telegram.png"
-    proxies: [Hong Kong, Korea, Singapore, DeepWep]
-
-  - name: X
-    type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/X.png"
-    proxies: [Taiwan, Japan, US]
-
-  - name: TikTok
-    type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/TikTok.png"
-    proxies: [Japan, Korea]
-
-  - name: Instagram
-    type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Instagram.png"
-    proxies: [Japan, Korea]
-
-  - name: YouTube
-    type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/YouTube.png"
-    proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore]
-
-  - name: Google
-    type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Google.png"
-    proxies: [Taiwan, Japan, US]
+    proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, DeepWep]
 
   - name: Discord
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Discord.png"
-    proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, US, GB, DE, DeepWep]
+    proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, DeepWep]
 
   - name: Reddit
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Reddit.png"
-    proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, US, GB, DE, DeepWep]
+    proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, DeepWep]
+
+  - name: WhatsApp
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/WhatsApp.png"
+    proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, DeepWep]
+
+  - name: X
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/X.png"
+    proxies: [Taiwan, Japan, United States]
+
+  - name: TikTok
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/TikTok.png"
+    proxies: [Taiwan, Japan, Korea]
+
+  - name: Instagram
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Instagram.png"
+    proxies: [Taiwan, Japan, Korea]
+
+  - name: YouTube
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/YouTube.png"
+    proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, DeepWep]
+
+  - name: Google
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Google.png"
+    proxies: [Hong Kong, Taiwan, Japan, United States]
 
   # --- 银行与券商 ---
-  - name: HSBC Hong Kong
+  - name: HSBC HK
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/HSBC_HK.png"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/HSBC HK.png"
     proxies: [DIRECT, Hong Kong, Taiwan, Japan, Singapore]
 
   - name: Interactive Brokers
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/IBKR.png"
-    proxies: [DIRECT, US]
+    proxies: [DIRECT, United States]
 
   - name: Futu
     type: select
@@ -172,151 +176,339 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Zircon.png"
     proxies: [DIRECT, Hong Kong, Taiwan, Japan, Singapore]
 
-  # --- 加密货币 ---
-  - name: Crypto
+  # --- 钱包与支付 ---
+  - name: PayPal
     type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/BTC.png"
-    proxies: [Taiwan, Japan, Singapore]
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/PayPal.png"
+    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Singapore, United States]
+
+  - name: Wise
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Wise.png"
+    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Singapore, United States]
+
+  # --- 加密货币 / 图表 ---
+  - name: TradingView
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/TradingView.png"
+    proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore]
 
   - name: Binance
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Binance.png"
-    proxies: [Hong Kong, Taiwan, Japan, Singapore]
+    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Korea, Singapore]
 
   - name: OKX
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/OKX.png"
-    proxies: [Hong Kong, Taiwan, Japan, Singapore]
+    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Korea, Singapore]
 
   - name: Coinbase
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Coinbase.png"
-    proxies: [US]
+    proxies: [United States]
 
   - name: Kraken
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Kraken.png"
-    proxies: [US]
+    proxies: [United States]
 
   - name: OSL
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/OSL.png"
     proxies: [Hong Kong, Taiwan, Japan, Singapore]
 
+  - name: Crypto
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/BTC.png"
+    proxies: [Hong Kong, Taiwan, Japan, Singapore]
+
   # --- 预测市场 ---
   - name: Kalshi
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Kalshi.png"
-    proxies: [US]
+    proxies: [United States]
 
-  # --- 开发者与游戏平台 ---
+  # --- 开发者 ---
   - name: GitHub
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/GitHub.png"
-    proxies: [Hong Kong, Korea, Singapore]
-
-  - name: Steam
-    type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Steam.png"
-    proxies: [DIRECT, Default, Hong Kong]
-
-  - name: XBOX
-    type: select
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/XBOX.png"
-    proxies: [DIRECT, Default, Hong Kong]
+    proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, DeepWep]
 
   # --- 流媒体 ---
   - name: NETFLIX
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Netflix.png"
-    proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, US]
+    proxies: [DIRECT, Hong Kong, Taiwan, Japan, Korea, Singapore]
 
   # --- 地理节点池 ---
   - name: Hong Kong
     type: url-test
-    use: [sushi_cloud]
-    url: "http://www.gstatic.com/generate_204"
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 50
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/HK.png"
-    filter: "港|HK|(?i)Hong"
+    filter: "香港|HK|(?i)Hong"
 
   - name: Taiwan
-    type: select
-    use: [sushi_cloud]
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/TW.png"
-    filter: "台|TW|(?i)Taiwan"
+    filter: "台湾|TW|(?i)Taiwan"
 
   - name: Japan
-    type: select
-    use: [sushi_cloud]
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/JP.png"
-    filter: "日|东京|JP|(?i)Tokyo|(?i)Japan"
+    filter: "日本|东京|JP|(?i)Tokyo|(?i)Japan"
 
   - name: Korea
     type: url-test
-    use: [sushi_cloud]
-    url: "http://www.gstatic.com/generate_204"
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 50
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/KR.png"
-    filter: "韩|首尔|KR|(?i)Korea"
+    filter: "韩国|首尔|KR|(?i)Korea"
 
   - name: Singapore
     type: url-test
-    use: [sushi_cloud]
-    url: "http://www.gstatic.com/generate_204"
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 50
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/SG.png"
-    filter: "Singapore|坡|狮城|SG|(?i)Singapore"
+    filter: "新加坡|狮城|SG|(?i)Singapore"
 
-  - name: US
-    type: select
-    use: [sushi_cloud]
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/US.png"
-    filter: "美|US|States|(?i)America"
-
-  - name: GB
+  - name: United States
     type: url-test
-    use: [sushi_cloud]
-    url: "http://www.gstatic.com/generate_204"
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 50
-    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/GB.png"
-    filter: "英|UK|GB|(?i)Kingdom"
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/US.png"
+    filter: "美国|US|(?i)America"
 
-  - name: DE
+  - name: Germany
     type: url-test
-    use: [sushi_cloud]
-    url: "http://www.gstatic.com/generate_204"
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 50
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/DE.png"
-    filter: "德|DE|(?i)Germany"
+    filter: "德国|DE|(?i)Germany"
+
+  - name: United Kingdom
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/UK.png"
+    filter: "英国|UK|(?i)United Kingdom"
+
+  - name: France
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/FR.png"
+    filter: "法国|FR|(?i)France"
+
+  - name: Canada
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/CA.png"
+    filter: "加拿大|CA|(?i)Canada"
+
+  - name: Australia
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/AU.png"
+    filter: "澳大利亚|AU|(?i)Australia"
+
+  - name: Russia
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/RU.png"
+    filter: "俄罗斯|RU|(?i)Russia"
+
+  - name: India
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/IN.png"
+    filter: "印度(?!尼西亚)|IN|(?i)India"
+
+  - name: Spain
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ES.png"
+    filter: "西班牙|ES|(?i)Spain"
+
+  - name: Sweden
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/SE.png"
+    filter: "瑞典|SE|(?i)Sweden"
+
+  - name: Switzerland
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/CH.png"
+    filter: "瑞士|CH|(?i)Switzerland"
+
+  - name: United Arab Emirates
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/AE.png"
+    filter: "阿联酋|AE|(?i)United Arab Emirates"
+
+  - name: Finland
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/FI.png"
+    filter: "芬兰|FI|(?i)Finland"
+
+  - name: Ireland
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/IE.png"
+    filter: "爱尔兰|IE|(?i)Ireland"
+
+  - name: Turkey
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/TR.png"
+    filter: "土耳其|TR|(?i)Turkey"
+
+  - name: Indonesia
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/ID.png"
+    filter: "印度尼西亚|ID|(?i)Indonesia"
+
+  - name: Portugal
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/PT.png"
+    filter: "葡萄牙|PT|(?i)Portugal"
+
+  - name: Thailand
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/TH.png"
+    filter: "泰国|TH|(?i)Thailand"
+
+  - name: Malaysia
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/MY.png"
+    filter: "马来西亚|MY|(?i)Malaysia"
+
+  - name: Greece
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/GR.png"
+    filter: "希腊|GR|(?i)Greece"
+
+  - name: Philippines
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/PH.png"
+    filter: "菲律宾|PH|(?i)Philippines"
+
+  - name: Cambodia
+    type: url-test
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/KH.png"
+    filter: "柬埔寨|KH|(?i)Cambodia"
 
   - name: DeepWep
     type: url-test
-    use: [sushi_cloud]
-    url: "http://www.gstatic.com/generate_204"
+    use: [cocoduck]
+    url: "https://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 50
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/DeepWep.png"
     exclude-filter: "续费|到期|剩余|官网|提示|通知|公告|网站|地址"
 
 # =====================================================================
-# Rule Providers — YAML 锚点已展开（Stash 不兼容 Clash Meta 锚点语法）
+# [YAML 锚点模板] — 非 provider，仅供下方 rule-providers 合并引用
+# =====================================================================
+
+# =====================================================================
+# [Rule Providers] — 锚点已展开（Stash 不兼容 Clash Meta 锚点语法）
 # =====================================================================
 rule-providers:
-
   # 广告
   bm_ad:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising.yaml"
-
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising.yaml"
   # AI 服务
   ys_chatgpt:
     type: http
@@ -324,21 +516,12 @@ rule-providers:
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/ChatGPT/ChatGPT.yaml"
-
-  ys_claude:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Claude/Claude.yaml"
-
   ys_gemini:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Gemini/Gemini.yaml"
-
   # 社交媒体
   ys_telegram:
     type: http
@@ -346,156 +529,159 @@ rule-providers:
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Telegram/Telegram.yaml"
-
-  ys_x:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/X/X.yaml"
-
-  ys_tiktok:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/TikTok/TikTok.yaml"
-
-  ys_instagram:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Instagram/Instagram.yaml"
-
-  ys_youtube:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/YouTube/YouTube.yaml"
-
-  ys_google:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Google/Google.yaml"
-
   ys_discord:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Discord/Discord.yaml"
-
   ys_reddit:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Reddit/Reddit.yaml"
-
-  # 银行与券商
+  ys_whatsapp:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/WhatsApp/WhatsApp.yaml"
+  ys_x:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/X/X.yaml"
+  ys_tiktok:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/TikTok/TikTok.yaml"
+  ys_instagram:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Instagram/Instagram.yaml"
+  ys_youtube:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/YouTube/YouTube.yaml"
+  ys_google:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Google/Google.yaml"
+  # 银行 / 券商
   ys_hsbc:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/HSBC/HSBC.yaml"
-
   ys_ibkr:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/IBKR/IBKR.yaml"
-
   ys_futu:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Futu/Futu.yaml"
-
   ys_longbridge:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Longbridge/Longbridge.yaml"
-
   ys_usmart:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/uSmart/uSmart.yaml"
-
   ys_zinvest:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Zinvest/Zinvest.yaml"
-
   ys_phillip:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Phillip/Phillip.yaml"
-
   ys_zircon:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Zircon/Zircon.yaml"
-
-  # 加密货币
-  ys_crypto:
+  # 钱包 / 支付
+  ys_paypal:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Crypto/Crypto.yaml"
-
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/PayPal/PayPal.yaml"
+  ys_wise:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Wise/Wise.yaml"
+  # 加密货币 / 图表
+  ys_tradingview:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/TradingView/TradingView.yaml"
   ys_binance:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Binance/Binance.yaml"
-
   ys_okx:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OKX/OKX.yaml"
-
   ys_coinbase:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Coinbase/Coinbase.yaml"
-
   ys_kraken:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Kraken/Kraken.yaml"
-
   ys_osl:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/OSL/OSL.yaml"
-
+  ys_crypto:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Crypto/Crypto.yaml"
   # 预测市场
   ys_kalshi:
     type: http
@@ -503,29 +689,13 @@ rule-providers:
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Kalshi/Kalshi.yaml"
-
-  # 开发者与游戏平台
+  # 开发者
   ys_github:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/GitHub/GitHub.yaml"
-
-  ys_steam:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Steam/Steam.yaml"
-
-  ys_xbox:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Xbox/Xbox.yaml"
-
   # 流媒体
   ys_netflix:
     type: http
@@ -533,77 +703,56 @@ rule-providers:
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Netflix/Netflix.yaml"
-
-  # 其他（无独立策略组，走 DIRECT / DeepWep）
-  ys_microsoft:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Microsoft/Microsoft.yaml"
-
-  ys_nintendo:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Nintendo/Nintendo.yaml"
-
+  # 其他（无独立策略组，出口 DeepWep）
   ys_docker:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Docker/Docker.yaml"
-
   # Loyalsoldier — 国内直连 / GFW / Apple / 中国 IP
   ls_lan:
     type: http
     behavior: ipcidr
-    format: text
+    format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
-
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
   ls_direct:
     type: http
     behavior: domain
-    format: text
+    format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
-
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
   ls_apple:
     type: http
     behavior: domain
-    format: text
+    format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt"
-
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt"
   ls_proxy:
     type: http
     behavior: domain
-    format: text
+    format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
-
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
   ls_gfw:
     type: http
     behavior: domain
-    format: text
+    format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
-
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
   ls_cncidr:
     type: http
     behavior: ipcidr
-    format: text
+    format: yaml
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt"
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt"
 
 # =====================================================================
-# [规则匹配逻辑 - 九层洋葱过滤模型]
+# [规则匹配逻辑] — 十一层洋葱过滤模型
 # =====================================================================
 rules:
-  # --- 第一层：局域网与进程绕过 ---
+  # --- 第一层：局域网与保留地址直连 ---
   - RULE-SET,ls_lan,DIRECT,no-resolve
 
   # --- 第二层：临时验证·美团三快 IP 直连 ---
@@ -616,21 +765,21 @@ rules:
 
   # --- 第四层：AI 服务 ---
   - RULE-SET,ys_chatgpt,ChatGPT
-  - RULE-SET,ys_claude,Claude
   - RULE-SET,ys_gemini,Gemini
 
   # --- 第五层：社交媒体 ---
   - RULE-SET,ys_telegram,Telegram
+  - RULE-SET,ys_discord,Discord
+  - RULE-SET,ys_reddit,Reddit
+  - RULE-SET,ys_whatsapp,WhatsApp
   - RULE-SET,ys_x,X
   - RULE-SET,ys_tiktok,TikTok
   - RULE-SET,ys_instagram,Instagram
   - RULE-SET,ys_youtube,YouTube
   - RULE-SET,ys_google,Google
-  - RULE-SET,ys_discord,Discord
-  - RULE-SET,ys_reddit,Reddit
 
-  # --- 第六层：银行与券商 ---
-  - RULE-SET,ys_hsbc,HSBC Hong Kong
+  # --- 第六层：银行 / 券商 ---
+  - RULE-SET,ys_hsbc,HSBC HK
   - RULE-SET,ys_ibkr,Interactive Brokers
   - RULE-SET,ys_futu,Futu
   - RULE-SET,ys_longbridge,Longbridge
@@ -639,43 +788,42 @@ rules:
   - RULE-SET,ys_phillip,Phillip
   - RULE-SET,ys_zircon,Zircon
 
-  # --- 第七层：加密货币 ---
+  # --- 第七层：钱包 / 支付 ---
+  - RULE-SET,ys_paypal,PayPal
+  - RULE-SET,ys_wise,Wise
+
+  # --- 第八层：加密货币 ---
+  - RULE-SET,ys_tradingview,TradingView
   - RULE-SET,ys_binance,Binance
   - RULE-SET,ys_okx,OKX
-  - RULE-SET,ys_crypto,Crypto
   - RULE-SET,ys_coinbase,Coinbase
   - RULE-SET,ys_kraken,Kraken
   - RULE-SET,ys_osl,OSL
+  - RULE-SET,ys_crypto,Crypto
 
-  # --- 预测市场 ---
+  # --- 第九层：预测市场 ---
   - RULE-SET,ys_kalshi,Kalshi
 
-  # --- 第八层：开发者与游戏平台 ---
+  # --- 第十层：开发者 ---
   - RULE-SET,ys_github,GitHub
-  - RULE-SET,ys_steam,Steam
-  - RULE-SET,ys_xbox,XBOX
 
-  # --- 第九层：流媒体 ---
+  # --- 第十一层：流媒体 ---
   - RULE-SET,ys_netflix,NETFLIX
 
-  # --- 其他（无独立策略组） ---
-  - RULE-SET,ys_microsoft,DIRECT
-  - RULE-SET,ys_nintendo,DIRECT
+  # --- 其他（Docker → DeepWep） ---
   - RULE-SET,ys_docker,DeepWep
 
   # --- 巴哈姆特（台湾站） ---
-  - DOMAIN-SUFFIX,gamer.com.tw,Taiwan
+  - DOMAIN-SUFFIX,gamer.com.tw,DeepWep
 
   # --- Apple 服务 → 国内直连 ---
   - RULE-SET,ls_apple,DIRECT
 
-  # --- 国内域名 → 直连 ---
+  # --- 国内域名 / 中国 IP → 直连 ---
   - RULE-SET,ls_direct,DIRECT
-
-  # --- 中国 IP → 直连 ---
   - RULE-SET,ls_cncidr,DIRECT,no-resolve
 
-  # --- GFW / 代理列表 → 兜底策略 ---
+  # --- GFW / 代理列表 → DeepWep ---
   - RULE-SET,ls_gfw,DeepWep
   - RULE-SET,ls_proxy,DeepWep
 
