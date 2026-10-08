@@ -163,17 +163,17 @@ proxy-groups:
   - name: X
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/X.png"
-    proxies: [Hong Kong,Taiwan, Japan, United States]
+    proxies: [Hong Kong, Taiwan, Japan, United States]
 
   - name: TikTok
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/TikTok.png"
-    proxies: [Hong Kong,Taiwan, Japan, Korea]
+    proxies: [Hong Kong, Taiwan, Japan, Korea]
 
   - name: Instagram
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Instagram.png"
-    proxies: [Hong Kong,Taiwan, Japan, Korea]
+    proxies: [Hong Kong, Taiwan, Japan, Korea]
 
   - name: YouTube
     type: select
