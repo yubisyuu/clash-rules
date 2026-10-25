@@ -87,7 +87,7 @@ proxy-groups:
   - name: Gemini
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Gemini.png"
-    proxies: [United States, Taiwan, Japan, Korea, Singapore]
+    proxies: [United States, Hong Kong, Taiwan, Japan, Korea, Singapore]
 
   # --- 社交媒体 ---
   - name: Telegram
@@ -491,7 +491,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/DeepWep.png"
-    exclude-filter: "续费|到期|剩余|官网|提示|通知|公告|网站|地址|订阅|邀请"
+    filter: "^(?!.*(续费|到期|剩余|官网|提示|通知|公告|网站|地址|订阅|邀请)).*$"
 
 # =====================================================================
 # [YAML 锚点模板] — 非 provider，仅供下方 rule-providers 合并引用

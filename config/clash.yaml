@@ -137,7 +137,7 @@ proxy-groups:
   - name: Gemini
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Gemini.png"
-    proxies: [United States, Taiwan, Japan, Korea, Singapore]
+    proxies: [United States, Hong Kong, Taiwan, Japan, Korea, Singapore]
 
   # --- 社交媒体 ---
   - name: Telegram
