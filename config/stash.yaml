@@ -151,6 +151,11 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Futu.png"
     proxies: [DIRECT, Hong Kong, Taiwan, Japan, Singapore]
 
+  - name: Tiger Trade
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Tiger Trade.png"
+    proxies: [Hong Kong, Taiwan, Japan, Singapore]
+
   - name: Longbridge
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Longbridge.png"
@@ -595,6 +600,12 @@ rule-providers:
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Futu/Futu.yaml"
+  ys_Tiger Trade:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Tiger Trade/Tiger Trade.yaml"
   ys_longbridge:
     type: http
     behavior: classical
@@ -761,6 +772,11 @@ rules:
   - RULE-SET,bm_ad,REJECT
   - DOMAIN-SUFFIX,ut.taobao.com,REJECT
   - DOMAIN-SUFFIX,bugly.qq.com,REJECT
+  - DOMAIN-WILDCARD,*pcdn*.biliapi.net,REJECT
+  - DOMAIN-SUFFIX,http://mcdn.bilivideo.cn,REJECT
+  - DOMAIN-SUFFIX,http://mcdn.bilivideo.com,REJECT
+  - DOMAIN-SUFFIX,http://szbdyd.com,REJECT
+  - DOMAIN-SUFFIX,http://mountaintoys.cn,REJECT
 
   # --- 第四层：AI 服务 ---
   - RULE-SET,ys_chatgpt,ChatGPT
@@ -781,6 +797,7 @@ rules:
   - RULE-SET,ys_hsbc,HSBC HK
   - RULE-SET,ys_ibkr,Interactive Brokers
   - RULE-SET,ys_futu,Futu
+  - RULE-SET,ys_Tiger Trade,Tiger Trade
   - RULE-SET,ys_longbridge,Longbridge
   - RULE-SET,ys_usmart,uSmart
   - RULE-SET,ys_zinvest,Zinvest
