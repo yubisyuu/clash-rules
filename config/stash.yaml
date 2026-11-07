@@ -68,7 +68,7 @@ proxy-providers:
 # =====================================================================
 
 # =====================================================================
-# [Proxy Groups] — 洋葱过滤核心（32 服务组 + 28 地理池，与 Clash 同构）
+# [Proxy Groups] — 洋葱过滤核心（33 服务组 + 28 地理池，与 Clash 同构）
 # =====================================================================
 proxy-groups:
 
@@ -600,7 +600,7 @@ rule-providers:
     format: yaml
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Futu/Futu.yaml"
-  ys_Tiger Trade:
+  ys_tiger trade:
     type: http
     behavior: classical
     format: yaml
@@ -773,10 +773,10 @@ rules:
   - DOMAIN-SUFFIX,ut.taobao.com,REJECT
   - DOMAIN-SUFFIX,bugly.qq.com,REJECT
   - DOMAIN-WILDCARD,*pcdn*.biliapi.net,REJECT
-  - DOMAIN-SUFFIX,http://mcdn.bilivideo.cn,REJECT
-  - DOMAIN-SUFFIX,http://mcdn.bilivideo.com,REJECT
-  - DOMAIN-SUFFIX,http://szbdyd.com,REJECT
-  - DOMAIN-SUFFIX,http://mountaintoys.cn,REJECT
+  - DOMAIN-SUFFIX,mcdn.bilivideo.cn,REJECT
+  - DOMAIN-SUFFIX,mcdn.bilivideo.com,REJECT
+  - DOMAIN-SUFFIX,szbdyd.com,REJECT
+  - DOMAIN-SUFFIX,mountaintoys.cn,REJECT
 
   # --- 第四层：AI 服务 ---
   - RULE-SET,ys_chatgpt,ChatGPT
@@ -797,7 +797,7 @@ rules:
   - RULE-SET,ys_hsbc,HSBC HK
   - RULE-SET,ys_ibkr,Interactive Brokers
   - RULE-SET,ys_futu,Futu
-  - RULE-SET,ys_Tiger Trade,Tiger Trade
+  - RULE-SET,ys_tiger trade,Tiger Trade
   - RULE-SET,ys_longbridge,Longbridge
   - RULE-SET,ys_usmart,uSmart
   - RULE-SET,ys_zinvest,Zinvest
