@@ -10,8 +10,10 @@ payload:
   - DOMAIN-SUFFIX,futuglobal.com
   - DOMAIN-SUFFIX,futustatic.com
   - DOMAIN-SUFFIX,cdn.futustatic.com
-  - DOMAIN-SUFFIX,static.futunn.com
+  - DOMAIN-SUFFIX,collect.fututrade.com
+  - DOMAIN-SUFFIX,funds.futuhn.com
   - DOMAIN-SUFFIX,open.futu.com
+  - DOMAIN-SUFFIX,static.futunn.com
   - DOMAIN-SUFFIX,futuapi.com
   - DOMAIN-SUFFIX,moomoo.com
   - DOMAIN-SUFFIX,moomoo.app
