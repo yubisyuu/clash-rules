@@ -1,0 +1,6 @@
+# NAME: Firstrade
+# AUTHOR: yubisyuu
+# SOURCE: firstrade.com 官网与 invest./signup./cdn. 证书核验（上游无 geosite）
+# DOMAIN-SUFFIX: 1
+# TOTAL: 1
+DOMAIN-SUFFIX,firstrade.com
