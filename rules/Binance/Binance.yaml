@@ -1,6 +1,9 @@
 # NAME: Binance
 # AUTHOR: yubisyuu
 # SOURCE: extracted from Crypto rule set
+# DOMAIN-KEYWORD: 1
+# PROCESS-NAME: 1
+# TOTAL: 2
 payload:
   - DOMAIN-KEYWORD,binance
   - PROCESS-NAME,Binance.exe

@@ -1,3 +1,7 @@
+# NAME: HSBC
+# AUTHOR: yubisyuu
+# DOMAIN-SUFFIX: 48
+# TOTAL: 48
 payload:
   - DOMAIN-SUFFIX,hsbc
   - DOMAIN-SUFFIX,hsbc-alternatives.de

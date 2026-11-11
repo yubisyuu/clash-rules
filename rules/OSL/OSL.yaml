@@ -1,3 +1,7 @@
+# NAME: OSL
+# AUTHOR: yubisyuu
+# DOMAIN-SUFFIX: 2
+# TOTAL: 2
 payload:
   - DOMAIN-SUFFIX,osl.com
   - DOMAIN-SUFFIX,oslgroup.com

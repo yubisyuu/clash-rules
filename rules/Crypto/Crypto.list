@@ -1,3 +1,12 @@
+# NAME: Crypto
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-06-06 09:20:01
+# DOMAIN: 1
+# DOMAIN-KEYWORD: 2
+# DOMAIN-SUFFIX: 196
+# PROCESS-NAME: 1
+# TOTAL: 200
 DOMAIN,token-api.metaswap.codefi.network
 DOMAIN-SUFFIX,1inch.io
 DOMAIN-SUFFIX,1ml.com

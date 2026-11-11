@@ -1,3 +1,7 @@
-DOMAIN-SUFFIX,coinbase.com
-DOMAIN-SUFFIX,coinbase-commerce.com
+# NAME: Coinbase
+# AUTHOR: yubisyuu
+# DOMAIN-SUFFIX: 3
+# TOTAL: 3
 DOMAIN-SUFFIX,cbpayments.com
+DOMAIN-SUFFIX,coinbase-commerce.com
+DOMAIN-SUFFIX,coinbase.com

@@ -1,3 +1,7 @@
+# NAME: uSmart
+# AUTHOR: yubisyuu
+# DOMAIN-SUFFIX: 2
+# TOTAL: 2
 payload:
   - DOMAIN-SUFFIX,usmart.com
   - DOMAIN-SUFFIX,usmart.hk
