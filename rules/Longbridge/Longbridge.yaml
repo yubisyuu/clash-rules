@@ -1,3 +1,7 @@
+# NAME: Longbridge
+# AUTHOR: yubisyuu
+# DOMAIN-SUFFIX: 10
+# TOTAL: 10
 payload:
   - DOMAIN-SUFFIX,lbctrl.com
   - DOMAIN-SUFFIX,lbkrs.com

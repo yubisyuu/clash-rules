@@ -1,23 +1,27 @@
-DOMAIN-SUFFIX,futu.com
-DOMAIN-SUFFIX,futunn.com
-DOMAIN-SUFFIX,futu.com.hk
-DOMAIN-SUFFIX,futu.sg
-DOMAIN-SUFFIX,futu.com.sg
-DOMAIN-SUFFIX,futu.com.au
-DOMAIN-SUFFIX,futu.co.jp
-DOMAIN-SUFFIX,futuinc.com
-DOMAIN-SUFFIX,futuglobal.com
-DOMAIN-SUFFIX,futustatic.com
+# NAME: Futu
+# AUTHOR: yubisyuu
+# DOMAIN-SUFFIX: 23
+# TOTAL: 23
 DOMAIN-SUFFIX,cdn.futustatic.com
 DOMAIN-SUFFIX,collect.fututrade.com
 DOMAIN-SUFFIX,funds.futuhn.com
+DOMAIN-SUFFIX,futu.co.jp
+DOMAIN-SUFFIX,futu.com
+DOMAIN-SUFFIX,futu.com.au
+DOMAIN-SUFFIX,futu.com.hk
+DOMAIN-SUFFIX,futu.com.sg
+DOMAIN-SUFFIX,futu.sg
+DOMAIN-SUFFIX,futuapi.com
+DOMAIN-SUFFIX,futuglobal.com
+DOMAIN-SUFFIX,futuinc.com
+DOMAIN-SUFFIX,futunn.com
+DOMAIN-SUFFIX,futustatic.com
+DOMAIN-SUFFIX,moomoo.app
+DOMAIN-SUFFIX,moomoo.co.jp
+DOMAIN-SUFFIX,moomoo.com
+DOMAIN-SUFFIX,moomoo.com.au
+DOMAIN-SUFFIX,moomoo.com.sg
+DOMAIN-SUFFIX,moomoo.my
+DOMAIN-SUFFIX,moomoo.sg
 DOMAIN-SUFFIX,open.futu.com
 DOMAIN-SUFFIX,static.futunn.com
-DOMAIN-SUFFIX,futuapi.com
-DOMAIN-SUFFIX,moomoo.com
-DOMAIN-SUFFIX,moomoo.app
-DOMAIN-SUFFIX,moomoo.com.sg
-DOMAIN-SUFFIX,moomoo.sg
-DOMAIN-SUFFIX,moomoo.com.au
-DOMAIN-SUFFIX,moomoo.co.jp
-DOMAIN-SUFFIX,moomoo.my

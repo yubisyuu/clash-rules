@@ -1,5 +1,9 @@
-DOMAIN-SUFFIX,investassistant.com
-DOMAIN-SUFFIX,zvstapp.com
-DOMAIN-SUFFIX,financialdatamining.com
+# NAME: Zinvest
+# AUTHOR: yubisyuu
+# DOMAIN-SUFFIX: 5
+# TOTAL: 5
 DOMAIN-SUFFIX,aliyuncs.com
+DOMAIN-SUFFIX,financialdatamining.com
+DOMAIN-SUFFIX,investassistant.com
 DOMAIN-SUFFIX,tpns.tencent.com
+DOMAIN-SUFFIX,zvstapp.com
