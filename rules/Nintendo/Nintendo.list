@@ -2,9 +2,9 @@
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2026-05-04 02:19:07
-# DOMAIN-SUFFIX: 125
+# DOMAIN-SUFFIX: 120
 # IP-CIDR: 1
-# TOTAL: 126
+# TOTAL: 121
 DOMAIN-SUFFIX,100classicbooks.com
 DOMAIN-SUFFIX,ac-pocketcamp.com
 DOMAIN-SUFFIX,amiibo.com
@@ -18,7 +18,6 @@ DOMAIN-SUFFIX,drmario-world.com
 DOMAIN-SUFFIX,excitebots.com
 DOMAIN-SUFFIX,fire-emblem-heroes.com
 DOMAIN-SUFFIX,fireemblemawakening.com
-DOMAIN-SUFFIX,flipnotestudio.com
 DOMAIN-SUFFIX,giratina.com
 DOMAIN-SUFFIX,gloryofheracles.com
 DOMAIN-SUFFIX,hackyourconsole.com
@@ -103,7 +102,6 @@ DOMAIN-SUFFIX,pokemonsunmoon.com
 DOMAIN-SUFFIX,pokemonswordshield.com
 DOMAIN-SUFFIX,pokemonultrasunmoon.com
 DOMAIN-SUFFIX,pokemonvgc.com
-DOMAIN-SUFFIX,pokemonwifi.net
 DOMAIN-SUFFIX,splatoon2tournament.com
 DOMAIN-SUFFIX,starfox.com
 DOMAIN-SUFFIX,supermario.com
@@ -114,14 +112,11 @@ DOMAIN-SUFFIX,supermariorun.com
 DOMAIN-SUFFIX,superpapermario.com
 DOMAIN-SUFFIX,supersmashbros.cn
 DOMAIN-SUFFIX,supersmashbros.com.cn
-DOMAIN-SUFFIX,thelegendarystarfy.com
 DOMAIN-SUFFIX,thewonderful101.com
 DOMAIN-SUFFIX,wariolandshakeit.com
 DOMAIN-SUFFIX,wariowarediy.com
 DOMAIN-SUFFIX,wii-u.com
 DOMAIN-SUFFIX,wiifit.com
-DOMAIN-SUFFIX,wiifitu.com
-DOMAIN-SUFFIX,wiipartyu.com
 DOMAIN-SUFFIX,wiisports.com
 DOMAIN-SUFFIX,wiisportsresort.com
 DOMAIN-SUFFIX,wiiugamepad.com
