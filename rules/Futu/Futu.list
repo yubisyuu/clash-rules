@@ -1,8 +1,8 @@
 # NAME: Futu
 # AUTHOR: yubisyuu
-# SOURCE: 自建 + v2fly domain-list-community geosite:futu（逐域名 DoH 解析 + TLS 证书主体核验）
-# DOMAIN-SUFFIX: 40
-# TOTAL: 40
+# SOURCE: 自建 + v2fly domain-list-community geosite:futu（逐域名 DoH 解析 + TLS 证书主体核验；剔除 NXDOMAIN）
+# DOMAIN-SUFFIX: 33
+# TOTAL: 33
 DOMAIN-SUFFIX,cdn.futustatic.com
 DOMAIN-SUFFIX,collect.fututrade.com
 DOMAIN-SUFFIX,funds.futuhn.com
@@ -10,10 +10,7 @@ DOMAIN-SUFFIX,futu.cn
 DOMAIN-SUFFIX,futu.co.jp
 DOMAIN-SUFFIX,futu.com
 DOMAIN-SUFFIX,futu.com.au
-DOMAIN-SUFFIX,futu.com.hk
-DOMAIN-SUFFIX,futu.com.sg
 DOMAIN-SUFFIX,futu.link
-DOMAIN-SUFFIX,futu.sg
 DOMAIN-SUFFIX,futuapi.com
 DOMAIN-SUFFIX,futuau.com
 DOMAIN-SUFFIX,futuesop.com
@@ -33,13 +30,9 @@ DOMAIN-SUFFIX,futusg.com
 DOMAIN-SUFFIX,futustatic.com
 DOMAIN-SUFFIX,fututrade.com
 DOMAIN-SUFFIX,moomoo.app
-DOMAIN-SUFFIX,moomoo.co.jp
 DOMAIN-SUFFIX,moomoo.com
-DOMAIN-SUFFIX,moomoo.com.au
-DOMAIN-SUFFIX,moomoo.com.sg
 DOMAIN-SUFFIX,moomoo.my
 DOMAIN-SUFFIX,moomoo.sg
 DOMAIN-SUFFIX,moomooequity.com
 DOMAIN-SUFFIX,moomootrustee.com
-DOMAIN-SUFFIX,open.futu.com
 DOMAIN-SUFFIX,static.futunn.com
