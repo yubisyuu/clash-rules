@@ -1,7 +1,9 @@
 # NAME: Phillip
 # AUTHOR: yubisyuu
-# DOMAIN-SUFFIX: 2
-# TOTAL: 2
+# SOURCE: 自建。DoH 解析 + TLS 证书 O 字段核验（含辉立交易平台 POEMS）
+# DOMAIN-SUFFIX: 3
+# TOTAL: 3
 payload:
   - DOMAIN-SUFFIX,phillip.com.hk
   - DOMAIN-SUFFIX,phillip.com.sg
+  - DOMAIN-SUFFIX,poems.com.sg
