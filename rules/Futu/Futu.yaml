@@ -1,22 +1,38 @@
 # NAME: Futu
 # AUTHOR: yubisyuu
-# DOMAIN-SUFFIX: 23
-# TOTAL: 23
+# SOURCE: 自建 + v2fly domain-list-community geosite:futu（逐域名 DoH 解析 + TLS 证书主体核验）
+# DOMAIN-SUFFIX: 40
+# TOTAL: 40
 payload:
   - DOMAIN-SUFFIX,cdn.futustatic.com
   - DOMAIN-SUFFIX,collect.fututrade.com
   - DOMAIN-SUFFIX,funds.futuhn.com
+  - DOMAIN-SUFFIX,futu.cn
   - DOMAIN-SUFFIX,futu.co.jp
   - DOMAIN-SUFFIX,futu.com
   - DOMAIN-SUFFIX,futu.com.au
   - DOMAIN-SUFFIX,futu.com.hk
   - DOMAIN-SUFFIX,futu.com.sg
+  - DOMAIN-SUFFIX,futu.link
   - DOMAIN-SUFFIX,futu.sg
   - DOMAIN-SUFFIX,futuapi.com
+  - DOMAIN-SUFFIX,futuau.com
+  - DOMAIN-SUFFIX,futuesop.com
+  - DOMAIN-SUFFIX,futufin.com
   - DOMAIN-SUFFIX,futuglobal.com
+  - DOMAIN-SUFFIX,futuhk.com
+  - DOMAIN-SUFFIX,futuhk1.com
+  - DOMAIN-SUFFIX,futuhk2.com
+  - DOMAIN-SUFFIX,futuhkapp.com
+  - DOMAIN-SUFFIX,futuhn.com
+  - DOMAIN-SUFFIX,futuholdings.com
   - DOMAIN-SUFFIX,futuinc.com
+  - DOMAIN-SUFFIX,futuniuniu.com
   - DOMAIN-SUFFIX,futunn.com
+  - DOMAIN-SUFFIX,futuoa.com
+  - DOMAIN-SUFFIX,futusg.com
   - DOMAIN-SUFFIX,futustatic.com
+  - DOMAIN-SUFFIX,fututrade.com
   - DOMAIN-SUFFIX,moomoo.app
   - DOMAIN-SUFFIX,moomoo.co.jp
   - DOMAIN-SUFFIX,moomoo.com
@@ -24,5 +40,7 @@ payload:
   - DOMAIN-SUFFIX,moomoo.com.sg
   - DOMAIN-SUFFIX,moomoo.my
   - DOMAIN-SUFFIX,moomoo.sg
+  - DOMAIN-SUFFIX,moomooequity.com
+  - DOMAIN-SUFFIX,moomootrustee.com
   - DOMAIN-SUFFIX,open.futu.com
   - DOMAIN-SUFFIX,static.futunn.com
