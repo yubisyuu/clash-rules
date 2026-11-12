@@ -4,11 +4,11 @@
 # UPDATED: 2026-05-12 02:38:11
 # DOMAIN: 1
 # DOMAIN-KEYWORD: 5
-# DOMAIN-SUFFIX: 684
+# DOMAIN-SUFFIX: 682
 # IP-CIDR: 4
 # IP-CIDR6: 1
 # PROCESS-NAME: 6
-# TOTAL: 701
+# TOTAL: 699
 payload:
   - DOMAIN,voice.telephony.goog
   - DOMAIN-SUFFIX,0emm.com
@@ -44,7 +44,6 @@ payload:
   - DOMAIN-SUFFIX,app-analytics-services.com
   - DOMAIN-SUFFIX,app-measurement-cn.com
   - DOMAIN-SUFFIX,app-measurement.com
-  - DOMAIN-SUFFIX,app-measurement.net
   - DOMAIN-SUFFIX,appbridge.ca
   - DOMAIN-SUFFIX,appbridge.io
   - DOMAIN-SUFFIX,appbridge.it
@@ -152,7 +151,6 @@ payload:
   - DOMAIN-SUFFIX,c.gle
   - DOMAIN-SUFFIX,campuslondon.com
   - DOMAIN-SUFFIX,capitalg.com
-  - DOMAIN-SUFFIX,certificate-transparency.dev
   - DOMAIN-SUFFIX,certificate-transparency.org
   - DOMAIN-SUFFIX,charlestonroadregistry.com
   - DOMAIN-SUFFIX,chat.gle

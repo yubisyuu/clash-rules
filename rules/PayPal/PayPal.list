@@ -3,8 +3,8 @@
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2025-06-06 09:16:55
 # DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 246
-# TOTAL: 247
+# DOMAIN-SUFFIX: 243
+# TOTAL: 244
 DOMAIN-SUFFIX,account-paypal.info
 DOMAIN-SUFFIX,account-paypal.net
 DOMAIN-SUFFIX,account-paypal.org
@@ -136,7 +136,6 @@ DOMAIN-SUFFIX,paypal-proserv.com
 DOMAIN-SUFFIX,paypal-qrshopping.org
 DOMAIN-SUFFIX,paypal-recargacelular.com
 DOMAIN-SUFFIX,paypal-redeem.com
-DOMAIN-SUFFIX,paypal-referral.com
 DOMAIN-SUFFIX,paypal-retail.com
 DOMAIN-SUFFIX,paypal-scoop.com
 DOMAIN-SUFFIX,paypal-search.com
@@ -162,7 +161,6 @@ DOMAIN-SUFFIX,paypal.com.cn
 DOMAIN-SUFFIX,paypal.com.hk
 DOMAIN-SUFFIX,paypal.com.sg
 DOMAIN-SUFFIX,paypal.hk
-DOMAIN-SUFFIX,paypal.info
 DOMAIN-SUFFIX,paypal.jp
 DOMAIN-SUFFIX,paypal.me
 DOMAIN-SUFFIX,paypal.net.cn
@@ -235,7 +233,6 @@ DOMAIN-SUFFIX,thepaypalshop.com
 DOMAIN-SUFFIX,theshoppingexpresslane.net
 DOMAIN-SUFFIX,venmo-touch.com
 DOMAIN-SUFFIX,venmo.com
-DOMAIN-SUFFIX,venmo.info
 DOMAIN-SUFFIX,venmo.net
 DOMAIN-SUFFIX,venmo.org
 DOMAIN-SUFFIX,venmo.s3.amazonaws.com

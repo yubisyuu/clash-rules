@@ -4,9 +4,9 @@
 # UPDATED: 2025-06-06 09:20:01
 # DOMAIN: 1
 # DOMAIN-KEYWORD: 2
-# DOMAIN-SUFFIX: 196
+# DOMAIN-SUFFIX: 188
 # PROCESS-NAME: 1
-# TOTAL: 200
+# TOTAL: 192
 payload:
   - DOMAIN,token-api.metaswap.codefi.network
   - DOMAIN-SUFFIX,1inch.io
@@ -19,7 +19,6 @@ payload:
   - DOMAIN-SUFFIX,apy999.com
   - DOMAIN-SUFFIX,arbitrum.io
   - DOMAIN-SUFFIX,asproex.com
-  - DOMAIN-SUFFIX,asproexapi.com
   - DOMAIN-SUFFIX,avax.network
   - DOMAIN-SUFFIX,bibox.com
   - DOMAIN-SUFFIX,bisq.io
@@ -46,13 +45,9 @@ payload:
   - DOMAIN-SUFFIX,blockchain.com
   - DOMAIN-SUFFIX,blockchair.com
   - DOMAIN-SUFFIX,bloks.io
-  - DOMAIN-SUFFIX,bnappzh.co
-  - DOMAIN-SUFFIX,bnappzh.com
-  - DOMAIN-SUFFIX,bnappzh.mobi
   - DOMAIN-SUFFIX,bnbstatic.com
   - DOMAIN-SUFFIX,bntrace.com
   - DOMAIN-SUFFIX,boba.network
-  - DOMAIN-SUFFIX,bsc.getblock.io
   - DOMAIN-SUFFIX,bscscan.com
   - DOMAIN-SUFFIX,btc.com
   - DOMAIN-SUFFIX,btcbox.co.jp
@@ -96,7 +91,6 @@ payload:
   - DOMAIN-SUFFIX,devcon.org
   - DOMAIN-SUFFIX,dextools.io
   - DOMAIN-SUFFIX,digiconomist.net
-  - DOMAIN-SUFFIX,docs.lotu.sh
   - DOMAIN-SUFFIX,dogecoin.com
   - DOMAIN-SUFFIX,dovemetrics.com
   - DOMAIN-SUFFIX,dropsearn.com
@@ -118,7 +112,6 @@ payload:
   - DOMAIN-SUFFIX,etherscan.io
   - DOMAIN-SUFFIX,ethfans.org
   - DOMAIN-SUFFIX,ethgasstation.info
-  - DOMAIN-SUFFIX,ewapool.net
   - DOMAIN-SUFFIX,f2pool.com
   - DOMAIN-SUFFIX,filecoin.io
   - DOMAIN-SUFFIX,flashbots.net
@@ -185,7 +178,6 @@ payload:
   - DOMAIN-SUFFIX,token.im
   - DOMAIN-SUFFIX,tokenpocket.pro
   - DOMAIN-SUFFIX,tokenterminal.com
-  - DOMAIN-SUFFIX,tokenview.com
   - DOMAIN-SUFFIX,tradeblock.com
   - DOMAIN-SUFFIX,traderjoexyz.com
   - DOMAIN-SUFFIX,tradingview.com

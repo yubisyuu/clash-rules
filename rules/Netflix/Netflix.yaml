@@ -3,10 +3,10 @@
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2025-06-06 09:16:54
 # DOMAIN: 3
-# DOMAIN-KEYWORD: 4
-# DOMAIN-SUFFIX: 30
+# DOMAIN-KEYWORD: 2
+# DOMAIN-SUFFIX: 29
 # PROCESS-NAME: 1
-# TOTAL: 38
+# TOTAL: 35
 payload:
   - DOMAIN,e13252.dscg.akamaiedge.net
   - DOMAIN,h-netflix.online-metrix.net
@@ -19,7 +19,6 @@ payload:
   - DOMAIN-SUFFIX,netflix.com.au
   - DOMAIN-SUFFIX,netflix.com.edgesuite.net
   - DOMAIN-SUFFIX,netflix.net
-  - DOMAIN-SUFFIX,netflixdnstest0.com
   - DOMAIN-SUFFIX,netflixdnstest1.com
   - DOMAIN-SUFFIX,netflixdnstest10.com
   - DOMAIN-SUFFIX,netflixdnstest2.com
@@ -42,7 +41,5 @@ payload:
   - DOMAIN-SUFFIX,onetrust.com
   - DOMAIN-SUFFIX,us-west-2.amazonaws.com
   - DOMAIN-KEYWORD,apiproxy-device-prod-nlb-
-  - DOMAIN-KEYWORD,dualstack.apiproxy-
-  - DOMAIN-KEYWORD,dualstack.ichnaea-web-
   - DOMAIN-KEYWORD,netflixdnstest
   - PROCESS-NAME,com.netflix.mediaclient
