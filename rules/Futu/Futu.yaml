@@ -1,18 +1,15 @@
 # NAME: Futu
 # AUTHOR: yubisyuu
-# SOURCE: 自建。逐域名 DoH 解析 + TLS 证书 O 字段核验（一级证据），工商登记/官方披露交叉；仅上游 v2fly 单一来源且无证书者排除
-# DOMAIN-SUFFIX: 31
-# TOTAL: 31
+# SOURCE: 自建。逐域名 DoH 解析 + TLS 证书 O 字段核验 + 工商登记/官方披露交叉
+# DOMAIN-SUFFIX: 26
+# TOTAL: 26
 payload:
   - DOMAIN-SUFFIX,cdn.futustatic.com
   - DOMAIN-SUFFIX,collect.fututrade.com
-  - DOMAIN-SUFFIX,funds.futuhn.com
   - DOMAIN-SUFFIX,futu.co.jp
   - DOMAIN-SUFFIX,futu.com
-  - DOMAIN-SUFFIX,futu.com.au
   - DOMAIN-SUFFIX,futu.link
   - DOMAIN-SUFFIX,futuapi.com
-  - DOMAIN-SUFFIX,futuau.com
   - DOMAIN-SUFFIX,futuesop.com
   - DOMAIN-SUFFIX,futufin.com
   - DOMAIN-SUFFIX,futuglobal.com
@@ -20,7 +17,6 @@ payload:
   - DOMAIN-SUFFIX,futuhk1.com
   - DOMAIN-SUFFIX,futuhk2.com
   - DOMAIN-SUFFIX,futuhkapp.com
-  - DOMAIN-SUFFIX,futuhn.com
   - DOMAIN-SUFFIX,futuholdings.com
   - DOMAIN-SUFFIX,futuinc.com
   - DOMAIN-SUFFIX,futuniuniu.com
@@ -30,7 +26,6 @@ payload:
   - DOMAIN-SUFFIX,fututrade.com
   - DOMAIN-SUFFIX,moomoo.app
   - DOMAIN-SUFFIX,moomoo.com
-  - DOMAIN-SUFFIX,moomoo.my
   - DOMAIN-SUFFIX,moomoo.sg
   - DOMAIN-SUFFIX,moomooequity.com
   - DOMAIN-SUFFIX,moomootrustee.com
