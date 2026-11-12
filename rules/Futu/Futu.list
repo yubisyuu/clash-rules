@@ -1,12 +1,11 @@
 # NAME: Futu
 # AUTHOR: yubisyuu
-# SOURCE: 自建 + v2fly domain-list-community geosite:futu（逐域名 DoH 解析 + TLS 证书主体核验；剔除 NXDOMAIN）
-# DOMAIN-SUFFIX: 33
-# TOTAL: 33
+# SOURCE: 自建。逐域名 DoH 解析 + TLS 证书 O 字段核验（一级证据），工商登记/官方披露交叉；仅上游 v2fly 单一来源且无证书者排除
+# DOMAIN-SUFFIX: 31
+# TOTAL: 31
 DOMAIN-SUFFIX,cdn.futustatic.com
 DOMAIN-SUFFIX,collect.fututrade.com
 DOMAIN-SUFFIX,funds.futuhn.com
-DOMAIN-SUFFIX,futu.cn
 DOMAIN-SUFFIX,futu.co.jp
 DOMAIN-SUFFIX,futu.com
 DOMAIN-SUFFIX,futu.com.au
@@ -25,7 +24,6 @@ DOMAIN-SUFFIX,futuholdings.com
 DOMAIN-SUFFIX,futuinc.com
 DOMAIN-SUFFIX,futuniuniu.com
 DOMAIN-SUFFIX,futunn.com
-DOMAIN-SUFFIX,futuoa.com
 DOMAIN-SUFFIX,futusg.com
 DOMAIN-SUFFIX,futustatic.com
 DOMAIN-SUFFIX,fututrade.com
