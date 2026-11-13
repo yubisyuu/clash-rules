@@ -2,7 +2,8 @@
 # AUTHOR: yubisyuu
 # SOURCE: 自建。逐域名 DoH 解析 + TLS 证书 O 字段核验 + 工商登记/官方披露交叉
 # DOMAIN-SUFFIX: 26
-# TOTAL: 26
+# IP-CIDR: 1
+# TOTAL: 27
 DOMAIN-SUFFIX,cdn.futustatic.com
 DOMAIN-SUFFIX,collect.fututrade.com
 DOMAIN-SUFFIX,futu.co.jp
@@ -29,3 +30,4 @@ DOMAIN-SUFFIX,moomoo.sg
 DOMAIN-SUFFIX,moomooequity.com
 DOMAIN-SUFFIX,moomootrustee.com
 DOMAIN-SUFFIX,static.futunn.com
+IP-CIDR,119.91.245.125/32
