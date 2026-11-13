@@ -1,8 +1,8 @@
 # NAME: Futu
 # AUTHOR: yubisyuu
-# SOURCE: 自建。逐域名 DoH 解析 + TLS 证书 O 字段核验 + 工商登记/官方披露交叉
-# DOMAIN-SUFFIX: 26
-# TOTAL: 26
+# SOURCE: 自建。逐域名 DoH 解析 + TLS 证书 O 字段核验；交叉源 blackmatrix7 Proxy_Classical、proxyBug/tigertrade-moomoo-rules、v2fly geosite:futu
+# DOMAIN-SUFFIX: 28
+# TOTAL: 28
 DOMAIN-SUFFIX,cdn.futustatic.com
 DOMAIN-SUFFIX,collect.fututrade.com
 DOMAIN-SUFFIX,futu.co.jp
@@ -23,9 +23,11 @@ DOMAIN-SUFFIX,futunn.com
 DOMAIN-SUFFIX,futusg.com
 DOMAIN-SUFFIX,futustatic.com
 DOMAIN-SUFFIX,fututrade.com
+DOMAIN-SUFFIX,fututrustee.com
 DOMAIN-SUFFIX,moomoo.app
 DOMAIN-SUFFIX,moomoo.com
 DOMAIN-SUFFIX,moomoo.sg
+DOMAIN-SUFFIX,moomoobull.com
 DOMAIN-SUFFIX,moomooequity.com
 DOMAIN-SUFFIX,moomootrustee.com
 DOMAIN-SUFFIX,static.futunn.com
