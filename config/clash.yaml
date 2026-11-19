@@ -145,6 +145,11 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Telegram.png"
     proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, DeepWep]
 
+  - name: Line
+    type: select
+    icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Line.png"
+    proxies: [Hong Kong, Taiwan, Japan, Korea, Singapore, DeepWep]
+
   - name: Discord
     type: select
     icon: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/icons/Discord.png"
@@ -575,6 +580,8 @@ rule-providers:
   # --- 社交媒体 ---
   ys_telegram:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Telegram/Telegram.yaml" }
+  ys_line:
+    { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Line/Line.yaml" }
   ys_discord:
     { <<: *ys_cls, url: "https://cdn.jsdelivr.net/gh/yubisyuu/clash-rules@main/rules/Discord/Discord.yaml" }
   ys_reddit:
@@ -690,6 +697,7 @@ rules:
 
   # --- 第五层：社交媒体 ---
   - RULE-SET,ys_telegram,Telegram
+  - RULE-SET,ys_line,Line
   - RULE-SET,ys_discord,Discord
   - RULE-SET,ys_reddit,Reddit
   - RULE-SET,ys_whatsapp,WhatsApp
